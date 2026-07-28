@@ -1,0 +1,102 @@
+
+#Daily automatic Lucky events (the case-opening roulette that makes lucky blocks appear).
+[events]
+	#Roll once per in-game day for a Lucky event, at a random moment inside the morning window below.
+	autoEvents = true
+	#Chance that a given day gets an event (0.333 = one day in three).
+	#Range: 0.0 ~ 1.0
+	chancePerDay = 0.333
+	#After this many consecutive event-less days, the next day's event is guaranteed (0 = an event every day).
+	#Range: 0 ~ 100
+	pityDays = 3
+	#Earliest moment of the day the roulette may start, in day-time ticks after dawn (1200 = 1 in-game minute after dawn).
+	#Range: 0 ~ 23999
+	windowStart = 1200
+	#Latest moment of the day the roulette may start, in day-time ticks after dawn. Kept in the morning so the spawned blocks can be opened before night.
+	#Range: 1 ~ 24000
+	windowEnd = 4800
+	#First in-game day on which a Lucky event may trigger (0 = the world's very first day). Earlier days are simply skipped: no roll, no pity credit - lets new players find their feet first.
+	#Range: 0 ~ 1000
+	firstEventDay = 1
+	#How an event's haul grows with the number of players online. Blocks are placed around
+	#each player, so the event's TOTAL is count x N^thisValue, and each player is given
+	#count x N^(thisValue-1) blocks.
+	#1.0 = every player gets a full solo-sized share, so the total is N times a solo event.
+	#0.5 (default) = the total grows with the square root of the team: four players find
+	#twice a solo event, not four times. Players here stay close together and pool what they
+	#find, so multiplying it outright buries them in blocks.
+	#0.0 = the whole team shares one solo-sized event.
+	#Range: 0.0 ~ 1.0
+	multiplayerScaling = 0.5
+
+#Vending-machine worldgen (the market stands).
+[machines]
+	#TESTING ONLY. When true, every machine lists its ENTIRE rarity pool instead of the
+	#usual 7-10 random lines — so you can see all items at once. Leave false for real play.
+	debugFullStock = false
+	#Relative weight of a COMMON machine when a stand generates (weights, not percents; 0 disables the rarity).
+	#Range: 0 ~ 1000
+	weightCommon = 59
+	#Relative weight of a RARE machine.
+	#Range: 0 ~ 1000
+	weightRare = 30
+	#Relative weight of an EPIC machine.
+	#Range: 0 ~ 1000
+	weightEpic = 10
+	#Relative weight of a LEGENDARY machine. A stand also rolls one of the four machine
+	#TYPES uniformly, so a legendary of a given type is four times rarer still -- that is
+	#accepted: every type's legendary tier is worth finding on its own.
+	#At 4 (3.9% of stands) a long game meets ~2.8 of them and only 6% of players meet none;
+	#at the old value of 1, half the players never saw a single one.
+	#Range: 0 ~ 1000
+	weightLegendary = 4
+	#One stand attempted per this many chunks (1 = every chunk, 0/1 disables the filter).
+	#Terrain may still reject a stand, so the real rate is slightly lower.
+	#Calibrated on a measured 1467 chunks explored per hour: at 700, a stand shows up every
+	#~29 minutes and is worth ~279 Lucky XP of exploration -- about level 14, the price of a dear line.
+	#Lower it while testing (60 puts one almost everywhere); the shipped value is what matters.
+	#Range: 1 ~ 100000
+	standChance = 700
+	#Maximum PERMANENT luck (%) a player can accumulate from the merchant's permanent-luck
+	#service. Each purchase adds +1-3%; once this cap is reached the service refuses (no
+	#charge). The temporary luck boost is separate and uncapped. 0 = no permanent luck at all.
+	#Range: 0 ~ 100
+	permLuckCap = 10
+	#Once a stand is first interacted with (machine OR merchant), it stays open for this
+	#many seconds, then closes FOR GOOD (both go inert). This is the anti-farm: a stand is
+	#a one-time treasure window, not a shop to come back to after grinding levels. The
+	#countdown shows on the stand's floating display; the decor burns down as it runs.
+	#Range: 10 ~ 3600
+	standTimerSeconds = 180
+
+#Lucky XP earned for breaking a lucky block -- the vending machines' currency.
+[xp]
+	#Lucky XP granted by ANY lucky block, whatever it drops and whatever its Luck.
+	#Silk-touching one grants nothing (it is picked up, not opened).
+	#This is the ONLY pace control: the level curve is vanilla's, and machine prices are in
+	#levels, so scaling the curve by K would be exactly the same as dividing baseXp by K.
+	#Calibrated on a measured session (119 lucky blocks in 49 min, one block per 10.1 chunks):
+	#at 4, a run reaches level 14 in ~29 min, and a stand (standChance=700) is worth ~279 XP --
+	#level 14, so the player must CHOOSE a line rather than afford the machine's best every
+	#time. A lucky-block pack hands out far more XP than vanilla ever does; this is deliberately
+	#slower than it looks. Raising it makes every machine price cheaper, in proportion.
+	#Range: 0 ~ 1000
+	baseXp = 4
+	#Multiplies the break's Lucky XP when the drop it rolled is a LEGENDARY one.
+	#The reward is the only thing that changes the payout: every lucky block is worth the
+	#same until its drop turns out legendary. Stacks multiplicatively with an XP event's
+	#own multiplier. Set to 1 to disable the bonus.
+	#Measured at ~3.3% of breaks (4 legendaries in 121 blocks), so this is worth about +3% of
+	#a run's total XP: it is a moment of celebration, not an income. baseXp is calibrated as
+	#if it did not exist. Luck still pays, but indirectly -- an infused block pushes the roll
+	#up the drop table, hence towards the legendary entries, hence towards this bonus.
+	#Range: 1 ~ 100
+	legendaryMultiplier = 2
+	#Ticks to wait before dropping the legendary bonus XP. The legendary suspense wrap in
+	#the lucky blocks' drops.txt reveals the marked item at delay=2.2, i.e. 44 ticks after
+	#the break, once its sound-and-particle fanfare has played out. Paying the bonus at that
+	#exact moment makes the doubling visible: a second clump of orbs bursts with the reward.
+	#0 = pay immediately, together with the break's own XP.
+	#Range: 0 ~ 200
+	legendaryXpDelayTicks = 44
+

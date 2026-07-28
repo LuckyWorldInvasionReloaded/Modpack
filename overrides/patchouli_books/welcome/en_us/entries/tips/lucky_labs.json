@@ -1,0 +1,20 @@
+{
+  "name": "Lucky XP & Lucky Labs",
+  "icon": "luckyxp:vending_machine_tools",
+  "category": "patchouli:tips",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Breaking a $(l)Lucky Block$() grants you $(l)$(9)Lucky XP$(). Spend it at the $(l)Lucky Labs$()! There, a $(l)mad scientist$() can do you serious favors, and a machine holds powerful treasures. But choose fast — the lab is about to $(l)$(c)explode$()!"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "luckyxp:lucky_merchant",
+      "name": "The Mad Scientist",
+      "scale": 0.7,
+      "offset": 0.3,
+      "text": "$(o)He's a bit unpredictable, but you'll get your money's worth.$()"
+    }
+  ]
+}

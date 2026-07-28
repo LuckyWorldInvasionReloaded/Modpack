@@ -1,0 +1,18 @@
+{
+  "name": "Lucky Tools",
+  "icon": "lucky:toolluckyblock",
+  "category": "patchouli:tips",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)$(6)Lucky Tools$()$(br)Les $(l)Tools Lucky Blocks$() lâchent de puissants $(l)Lucky Tools$() qui peuvent changer toute votre partie. Mais seulement $(l)$(c)1%$() de chance par cassage. $(o)Du pur hasard !$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "luckytools:lucky_ring,luckytools:lucky_belt,luckytools:lucky_hammer,luckytools:lucky_radar,luckytools:lucky_shield,luckytools:lucky_spawner,luckytools:lucky_idol,luckytools:lucky_wand,lucky:toolluckyblock",
+      "title": "Les Lucky Tools",
+      "text": "$(o)Tous les Lucky Tools doivent être utilisés sur des lucky blocks. Lisez l'infobulle de chaque outil, essayez-le sur un lucky block, et découvrez son utilité !$()"
+    }
+  ]
+}

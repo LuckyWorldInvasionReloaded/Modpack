@@ -1,0 +1,2 @@
+/ Born in Chaos firewell (with loot chest)
+ID=firewell,file=firewell.nbt,centerY=0

@@ -1,0 +1,80 @@
+# Pack changes for 'DesertLB-1.20.2', applied in memory over the author's own file.
+# What they do and why: ADDON_PATCHES.md.
+
+@addon DesertLB-1.20.2
+
+@file drops.txt
+
+@match
+group(
+type=structure,ID=desertluckywell;type=message,ID="A wishing well? Maybe you should throw in a coin...";
+type=command,ID=/give #pName gold_nugget{display:{Name:"{\"text\":\"Coin\",\"color\":\"gold\"}"}};
+type=block,ID=lucky:desert_lucky_block,posY=#bPosY-3,NBTTag=(Drops=["group(
+type=message,ID=\"$bYour wish came true!\";
+type=block,ID=air,posY='#'bPosY+3;
+type=entity,ID=firework_rocket,NBTTag=(LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag='#'randFireworksRocket)),amount=20,posY='#'bPosY+3,posOffset='#'circleOffset(2);
+ID=gold_ingot,amount=#rand(20,30),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+ID=diamond,amount=#rand(20,30),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+ID=emerald,amount=#rand(20,30),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+ID=lapis_lazuli,amount=#rand(20,30),posY='#'bPosY+10,posOffset='#'circleOffset(2)
+)"])
+)@luck=2
+@replace
+group(
+    type=structure,ID=desertluckywell;type=message,ID="A wishing well? Maybe you should throw in a coin...";
+    type=command,ID=/give #pName gold_nugget{display:{Name:"{\"text\":\"Coin\",\"color\":\"gold\"}"}};
+    type=block,ID=lucky:desert_lucky_block,posY=#bPosY-3,NBTTag=(Drops=["group(
+        type=message,ID=\"$bYour wish came true!\";
+        type=block,ID=air,posY='#'bPosY+3;
+        type=entity,ID=firework_rocket,NBTTag=(LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag='#'randFireworksRocket)),amount=5,posY='#'bPosY+3,posOffset='#'circleOffset(2);
+        ID=gold_ingot,amount=#rand(20,30),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+        ID=diamond,amount=#rand(20,30),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+        ID=emerald,amount=#rand(20,30),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+        ID=lapis_lazuli,amount=#rand(20,30),posY='#'bPosY+10,posOffset='#'circleOffset(2)
+    )"])
+)@luck=2
+@end
+
+@file natural_gen.txt
+
+@match
+type=block,ID=lucky:desert_lucky_block@chance=120
+@replace
+type=block,ID=lucky:desert_lucky_block@chance=220
+@end
+
+@match
+group(type=structure,ID=desertacropolis;type=block,ID=lucky:desert_lucky_block,posY=#bPosY+1,tileEntity=(Luck=75))@chance=150
+@replace
+group(type=structure,ID=desertacropolis;type=block,ID=lucky:desert_lucky_block,posY=#bPosY+1,tileEntity=(Luck=60))@chance=250
+@end
+
+@file luck_crafting.txt
+
+@match
+diamond=8
+diamond_block=80
+netherite_ingot=25
+netherite_block=100
+@replace
+diamond=2
+diamond_block=18
+netherite_ingot=5
+netherite_block=40
+@end
+
+@match
+emerald=6
+emerald_block=60
+gold_ingot=12
+gold_block=100
+iron_ingot=3
+iron_block=30
+@replace
+emerald=1
+emerald_block=9
+gold_ingot=1
+gold_block=9
+iron_block=5
+@end
+

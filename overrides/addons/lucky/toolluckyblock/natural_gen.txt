@@ -1,0 +1,3 @@
+>minecraft:overworld
+
+type=block,ID=lucky:toolluckyblock@chance=75

@@ -1,0 +1,1 @@
+/ Legacy spawnrate / structureChance / doDropsOnCreativeMode removed (ignored by v13). Main block is intentionally not world-gen (empty natural_gen.txt); quest/craft-gated.

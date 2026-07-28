@@ -1,0 +1,1 @@
+/ spawnrate / structureChance / doDropsOnCreativeMode removed (ignored by Lucky Block v13). Gen rate = @chance in natural_gen.txt.

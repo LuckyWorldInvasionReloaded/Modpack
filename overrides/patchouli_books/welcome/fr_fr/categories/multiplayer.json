@@ -1,0 +1,6 @@
+{
+  "name": "Multijoueur",
+  "description": "Mieux à plusieurs (et $(c)plus dur$() aussi).",
+  "icon": "minecraft:player_head",
+  "sortnum": 1
+}

@@ -1,0 +1,19 @@
+{
+  "name": "The Invasions",
+  "icon": "minecraft:iron_sword",
+  "category": "patchouli:tips",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)$(4)The Invasions$()$(br)On some nights, invasions are unleashed and monsters hunt you down. $(l)Gear up$(), kill a fair number of them, and you'll get to sleep in peace!"
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["lwir:textures/patchouli/invasions.png"],
+      "title": "Night of the Invasion",
+      "border": true,
+      "text": "$(o)Don't try to hide, or a curse might fall upon you.$()"
+    }
+  ]
+}

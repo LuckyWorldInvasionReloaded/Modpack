@@ -1,0 +1,24 @@
+{
+  "name": "Vies Partagées",
+  "icon": "minecraft:totem_of_undying",
+  "category": "patchouli:multiplayer",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "En coop, l'équipe reçoit $(l)une vie, plus une par joueur$().$(br)Exemple : $(l)$(2)3 vies pour 2 joueurs$(), communes à l'équipe.$(br)Elles s'affichent en $(l)cœurs$() à l'écran, en bas à droite."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Quand vous tombez, vous ne mourez pas vraiment : vous tombez $(l)au sol$(), et un coéquipier peut venir vous $(l)réanimer$(). Être réanimé consomme quand même une vie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Si $(l)tous$() les joueurs sont au sol en même temps, vous réapparaissez tous, mais votre $(l)$(c)équipement tombe$() là où vous êtes tombés. Quand les cœurs sont épuisés, la partie est finie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Vous pouvez changer le nombre de vies dans $(l)Mods > Lucky Tweaks$(), mais il est $(l)recommandé$() de jouer ainsi."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Ouvrez avec Prudence",
+  "icon": "minecraft:cobblestone",
+  "category": "patchouli:tips",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)$(c)Ouvrez avec Prudence$()$(br)Les Lucky Blocks apportent aussi leur lot de punitions. Mettre un $(l)bloc entre vous et eux$() pourrait vous sauver la vie !"
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["lwir:textures/patchouli/open_with_care.png"],
+      "title": "N'oubliez pas !",
+      "text": "$(o)La terre c'est l'amour, la terre c'est la vie$()",
+      "border": true
+    }
+  ]
+}

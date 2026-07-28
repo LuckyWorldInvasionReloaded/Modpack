@@ -1,0 +1,188 @@
+# Pack changes for 'SummerLB-1.20.2-02', applied in memory over the author's own file.
+# What they do and why: ADDON_PATCHES.md.
+
+@addon SummerLB-1.20.2-02
+
+@file drops.txt
+
+@match
+group(type=entity,ID=parrot,amount=#rand(5,10),posOffset=#circleOffset(3),NBTTag=(type=particle,ID="note",size=(2,0,2),particleAmount=20)@luck=1
+@replace
+group(type=entity,ID=parrot,amount=#rand(5,10),posOffset=#circleOffset(3),NBTTag=(type=particle,ID=note,size=2,particleAmount=20))@luck=1
+@end
+
+@match
+group(
+type=structure,ID=wishing_well;type=message,ID="A wishing well? Maybe you should throw in a coin...";
+type=command,ID=/give #pName gold_nugget{display:{Name:"{\"text\":\"Coin\",\"color\":\"gold\"}"}};
+type=block,ID=lucky:lucky_block,posY=#bPosY-3,NBTTag=(Drops=["group(
+type=message,ID=\"$bYour wish came true!\";
+type=block,ID=air,posY='#'bPosY+3;
+type=block,ID=beacon,posY='#'bPosY+2;
+type=entity,ID=firework_rocket,NBTTag=(LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag='#'randFireworksRocket)),amount=20,posY='#'bPosY+3,posOffset='#'circleOffset(2);
+ID=gold_ingot,amount=#rand(10,25),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+ID=diamond,amount=#rand(5,10),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+ID=emerald,amount=#rand(3,10),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+ID=lapis_lazuli,amount=#rand(15,30),posY='#'bPosY+10,posOffset='#'circleOffset(2)
+)"])
+)@luck=2@chance=0.8
+@replace
+group(
+    type=structure,ID=wishing_well;type=message,ID="A wishing well? Maybe you should throw in a coin...";
+    type=command,ID=/give #pName gold_nugget{display:{Name:"{\"text\":\"Coin\",\"color\":\"gold\"}"}};
+    type=block,ID=lucky:lucky_block,posY=#bPosY-3,NBTTag=(Drops=["group(
+        type=message,ID=\"$bYour wish came true!\";
+        type=block,ID=air,posY='#'bPosY+3;
+        type=block,ID=beacon,posY='#'bPosY+2;
+        type=entity,ID=firework_rocket,NBTTag=(LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag='#'randFireworksRocket)),amount=5,posY='#'bPosY+3,posOffset='#'circleOffset(2);
+        ID=gold_ingot,amount=#rand(10,25),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+        ID=diamond,amount=#rand(5,10),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+        ID=emerald,amount=#rand(3,10),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+        ID=lapis_lazuli,amount=#rand(15,30),posY='#'bPosY+10,posOffset='#'circleOffset(2)
+    )"])
+)@luck=2@chance=0.8
+@end
+
+@match
+group(
+ID=iron_ingot,amount=#rand(8,15);
+ID=gold_ingot,amount=#rand(10,25);
+ID=diamond,amount=#rand(5,10);
+ID=emerald,amount=#rand(3,10);
+ID=lapis_lazuli,amount=#rand(15,30);
+type=entity,ID=firework_rocket,NBTTag=(
+LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag=#randFireworksRocket)
+),amount=20,posOffset=#circleOffset(0,2)
+)@luck=2@chance=0.6
+@replace
+group(
+    ID=iron_ingot,amount=#rand(8,15);
+    ID=gold_ingot,amount=#rand(10,25); 
+    ID=diamond,amount=#rand(5,10);
+    ID=emerald,amount=#rand(3,10);
+    ID=lapis_lazuli,amount=#rand(15,30);
+    type=entity,ID=firework_rocket,NBTTag=(
+        LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag=#randFireworksRocket)
+    ),amount=5,posOffset=#circleOffset(0,2)
+)@luck=2@chance=0.6
+@end
+
+@match
+group(
+type=structure,ID=wishing_well;type=message,ID="A wishing well? Maybe you should throw in a coin...";
+type=command,ID=/give #pName gold_nugget{display:{Name:"{\"text\":\"Coin\",\"color\":\"gold\"}"}};
+type=block,ID=lucky:lucky_block,posY=#bPosY-3,NBTTag=(Drops=["group(
+type=message,ID=\"$bYour water wish came true!\";
+type=block,ID=air,posY='#'bPosY+3;
+type=block,ID=beacon,posY='#'bPosY+2;
+type=entity,ID=firework_rocket,NBTTag=(LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag='#'randFireworksRocket)),amount=20,posY='#'bPosY+3,posOffset='#'circleOffset(2);
+ID=lucky:summer_lucky_potion,amount=#rand(5,15),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+ID=lingering_potion,NBTTag=(Potion="minecraft:water"),amount=#rand(2,8),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+ID=water_bucket,amount=#rand(1,4),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+ID=sea_lantern,amount=#rand(2,6),posY='#'bPosY+10,posOffset='#'circleOffset(2)
+)"])
+)@luck=1@chance=0.8
+@replace
+group(
+    type=structure,ID=wishing_well;type=message,ID="A wishing well? Maybe you should throw in a coin...";
+    type=command,ID=/give #pName gold_nugget{display:{Name:"{\"text\":\"Coin\",\"color\":\"gold\"}"}};
+    type=block,ID=lucky:lucky_block,posY=#bPosY-3,NBTTag=(Drops=["group(
+        type=message,ID=\"$bYour water wish came true!\";
+        type=block,ID=air,posY='#'bPosY+3;
+        type=block,ID=beacon,posY='#'bPosY+2;
+        type=entity,ID=firework_rocket,NBTTag=(LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag='#'randFireworksRocket)),amount=5,posY='#'bPosY+3,posOffset='#'circleOffset(2);
+        ID=lucky:summer_lucky_potion,amount=#rand(5,15),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+        ID=lingering_potion,NBTTag=(Potion="minecraft:water"),amount=#rand(2,8),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+        ID=water_bucket,amount=#rand(1,4),posY='#'bPosY+10,posOffset='#'circleOffset(2);
+        ID=sea_lantern,amount=#rand(2,6),posY='#'bPosY+10,posOffset='#'circleOffset(2)
+    )"])
+)@luck=1@chance=0.8
+@end
+
+@match
+type=entity,ID=falling_block,posOffset='#'circleOffset(#rand(1,15)),NBTTag=(BlockState=(Name=water),Fuse=50b,Motion=#randLaunchMotion),amount=#rand(30,56)@luck=-2@chance=0.86
+@replace
+type=entity,ID=falling_block,posOffset=#circleOffset(1,15),NBTTag=(BlockState=(Name=water),Fuse=50b,Motion=#randLaunchMotion),amount=#rand(30,56)@luck=-2@chance=0.86
+@end
+
+@match
+group(type=entity,ID=bat,amount=#rand(9,20),posOffset='#'circleOffset(#rand(1,10));type=entity,ID=spider,NBTTag=(Motion=#randLaunchMotion),amount=15)@luck=-1@chance=0.93
+@replace
+group(type=entity,ID=bat,amount=#rand(9,20),posOffset=#circleOffset(1,10);type=entity,ID=spider,NBTTag=(Motion=#randLaunchMotion),amount=15)@luck=-1@chance=0.93
+@end
+
+@match
+group(
+/ sword, difficulty, time, potion effects
+ID=wooden_sword;
+type=difficulty,ID=hard;
+type=time,ID=18750;
+type=effect,ID=slowness,duration=30,amplifier=4;
+type=effect,ID=blindness,duration=30;
+group:1:(
+/ zombies, creepers, spiders & cave spiders, silverfish & endermites, guardians
+type=entity,ID=zombie,amount=#rand(20,50);
+type=entity,ID=creeper,amount=#rand(10,30);
+group(type=entity,ID=spider,amount=#rand(15,45);type=entity,ID=cave_spider,amount=#rand(5,10));
+group(type=entity,ID=silverfish,amount=#rand(15,45);type=entity,ID=endermite,amount=#rand(5,10));
+type=entity,ID=guardian,amount=#rand(10,30);
+/ all at once
+group(
+type=entity,ID=zombie,amount=#rand(20,50);
+type=entity,ID=creeper,amount=#rand(10,30);
+group(type=entity,ID=spider,amount=#rand(15,45);type=entity,ID=cave_spider,amount=#rand(5,10);
+type=entity,ID=silverfish,amount=#rand(15,45);type=entity,ID=endermite,amount=#rand(5,10);
+type=entity,ID=guardian,amount=#rand(10,30))
+)
+),posOffset=#circleOffset(8,10)
+)@luck=-2@chance=0.69
+@replace
+group(
+    / sword, difficulty, time, potion effects
+    ID=wooden_sword;
+    type=difficulty,ID=hard;
+    type=effect,ID=slowness,duration=30,amplifier=4;
+    type=effect,ID=blindness,duration=30;
+    group:1:(
+        / zombies, creepers, spiders & cave spiders, silverfish & endermites, guardians
+        type=entity,ID=zombie,amount=#rand(20,50);
+        type=entity,ID=creeper,amount=#rand(10,30);
+        group(type=entity,ID=spider,amount=#rand(15,45);type=entity,ID=cave_spider,amount=#rand(5,10));
+        group(type=entity,ID=silverfish,amount=#rand(15,45);type=entity,ID=endermite,amount=#rand(5,10));
+        type=entity,ID=guardian,amount=#rand(10,30);
+        / all at once
+        group(
+            type=entity,ID=zombie,amount=#rand(20,50);
+            type=entity,ID=creeper,amount=#rand(10,30);
+            group(type=entity,ID=spider,amount=#rand(15,45);type=entity,ID=cave_spider,amount=#rand(5,10);
+            type=entity,ID=silverfish,amount=#rand(15,45);type=entity,ID=endermite,amount=#rand(5,10);
+            type=entity,ID=guardian,amount=#rand(10,30))
+        )
+    ),posOffset=#circleOffset(8,10)
+)@luck=-2@chance=0.69
+@end
+
+@match
+group(type=fill,ID=sand,size=(5,1,5),pos=(#bPosX+0,#bPosY-1,-#bPosZ+0);type=entity,ID=husk,amount=#rand(6,12),posOffset=#circleOffset(1,6))@luck=-1
+@replace
+group(type=fill,ID=sand,size=(5,1,5),pos=(#bPosX+0,#bPosY-1,#bPosZ+0);type=entity,ID=husk,amount=#rand(6,12),posOffset=#circleOffset(1,6))@luck=-1
+@end
+
+@match
+/blazes
+group(type=entity,ID=falling_block,NBTTag=(BlockState=(Name=fire),Fuse=50b,Motion=#randLaunchMotion),amount=10;type=entity,ID=blaze,amount=#rand(5,9),posOffset=#circleOffset(1,5))@luck=-1
+@replace
+@end
+
+@match
+group(ID=ender_pearl,amount=10;ID=ender_eye,amount=5)@luck=2
+@replace
+group(ID=ender_pearl,amount=10)@luck=2
+@end
+
+@match
+group:#rand(3,6):(ID=lucky:lucky_block;ID=lucky:lucky_block_desert;ID=lucky:lucky_block_fire;ID=lucky:lucky_block_summer)@luck=1
+@replace
+/ group:#rand(3,6):(ID=lucky:lucky_block;ID=lucky:lucky_block_desert;ID=lucky:lucky_block_fire;ID=lucky:lucky_block_summer)@luck=1
+@end
+

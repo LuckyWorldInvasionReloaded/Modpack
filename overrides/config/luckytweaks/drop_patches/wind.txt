@@ -1,0 +1,61 @@
+# Pack changes for 'WindElement-Build003-MC1.18.x', applied in memory over the author's own file.
+# What they do and why: ADDON_PATCHES.md.
+
+@addon WindElement-Build003-MC1.18.x
+
+@file drops.txt
+
+@match
+group(ID=ender_pearl,amount=#rand(4,9);ID=ender_eye,amount=#rand(2,4);ID=blaze_powder,amount=#rand(1,3))@luck=1
+@replace
+group(ID=ender_pearl,amount=#rand(5,10))@luck=1
+@end
+
+@match
+type=entity,ID=enderdragon@luck=-2@chance=0.05
+@replace
+/ type=entity,ID=enderdragon@luck=-2@chance=0.05
+@end
+
+@match
+ID=elytra,NBTTag=(Enchantments=#luckyChestplateEnchantments,display=(Name=#jsonStr(text="Lucky Elytra",color=green,bold=true)))@luck=2
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=elytra,NBTTag=(LWLeg=1b,Enchantments=#luckyChestplateEnchantments,display=(Name=#jsonStr(text="Lucky Elytra",color=green,bold=true))),delay=2.2)@luck=2
+@end
+
+@match
+group(
+type=item,ID=lucky:elewind_lucky_sword;
+type=item,ID=lucky:elewind_lucky_bow;
+type=item,ID=lucky:elewind_lucky_potion,NBTTag=(Luck=#randList(100,-100)),amount=#rand(10,15);
+type=entity,ID=firework_rocket,NBTTag=(
+LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag=#randFireworksRocket)
+),amount=20,posOffset=#circleOffset(0,2)
+)@luck=2@chance=0.8
+@replace
+group(
+    type=item,ID=lucky:elewind_lucky_sword;
+    type=item,ID=lucky:elewind_lucky_bow;
+    type=item,ID=lucky:elewind_lucky_potion,NBTTag=(Luck=#randList(100,-100)),amount=#rand(10,15);
+    type=entity,ID=firework_rocket,NBTTag=(
+        LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag=#randFireworksRocket)
+    ),amount=5,posOffset=#circleOffset(0,2)
+)@luck=2@chance=0.8
+@end
+
+@file natural_gen.txt
+
+@match
+type=block,ID=lucky:elewind_lucky_block@chance=195
+@replace
+type=block,ID=lucky:elewind_lucky_block@chance=250
+@end
+
+@match
+>minecraft:the_end
+type=block,ID=lucky:elewind_lucky_block@chance=169
+@replace
+/ >minecraft:the_end
+/ type=block,ID=lucky:elewind_lucky_block@chance=0
+@end
+

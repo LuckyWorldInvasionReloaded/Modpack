@@ -1,0 +1,18 @@
+{
+  "name": "Lucky Blocks",
+  "icon": "lucky:lucky_world_invasion_lucky_block",
+  "category": "patchouli:tips",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)$(2)Lucky Blocks = Progress$()$(br)Few things can be crafted, and almost everything has to be found inside $(l)Lucky Blocks$(), with a bit of luck!"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "lucky:lucky_world_invasion_lucky_block,lucky:chaosluckyblock,lucky:yummyluckyblock,lucky:toolluckyblock,lucky:water_lucky_block,lucky:pink_lucky_block,lucky:fire_lucky_block,lucky:desert_lucky_block,lucky:summer_lucky_block,lucky:amongus_lucky_block,lucky:morbius_lucky_block,lucky:elemental_lucky_block,lucky:elefire_lucky_block,lucky:eleice_lucky_block,lucky:elewind_lucky_block,lucky:elergy_lucky_block",
+      "title": "The Lucky Blocks",
+      "text": "$(o)They are more dangerous than they look.$()"
+    }
+  ]
+}

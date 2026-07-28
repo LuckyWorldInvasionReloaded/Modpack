@@ -1,0 +1,4 @@
+/ jewels
+/ Cap is +50 (Lucky Tweaks): 2 redstone blocks = exactly full infusion in one craft.
+redstone=2
+redstone_block=25

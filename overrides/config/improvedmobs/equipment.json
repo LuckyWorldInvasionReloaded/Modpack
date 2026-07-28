@@ -1,0 +1,732 @@
+{
+  "__comment": [
+    "Mobs will be able to equip items declared here",
+    "The first number is the weight while the second number is the quality",
+    "Weight is the weight of an item. Higher weight means that the item is more likely to get choosen",
+    "Quality is a modifier applied to the weight. The final weight used is weight + quality * current difficulty"
+  ],
+  "MAINHAND": {
+    "fuze_relics:nether_portal_gun": [
+      14699,
+      0.0173
+    ],
+    "lucky:amongus_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:amongus_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:desert_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:desert_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:elefire_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:elefire_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:eleice_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:eleice_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:elemental_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:elemental_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:elergy_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:elergy_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:elewind_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:elewind_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:fire_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:fire_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:lucky_world_invasion_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:morbius_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:morbius_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:pink_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:pink_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "lucky:summer_lucky_bow": [
+      11072,
+      7.109857
+    ],
+    "lucky:summer_lucky_sword": [
+      9497,
+      10.394583
+    ],
+    "minecraft:bow": [
+      12304,
+      4.508568
+    ],
+    "minecraft:crossbow": [
+      12598,
+      3.826627
+    ],
+    "minecraft:diamond_axe": [
+      12067,
+      5.022479
+    ],
+    "minecraft:diamond_sword": [
+      12129,
+      4.889481
+    ],
+    "minecraft:enchanted_book": [
+      13272,
+      1.8573177
+    ],
+    "minecraft:golden_axe": [
+      14728,
+      0.014399999
+    ],
+    "minecraft:golden_sword": [
+      14791,
+      0.0081
+    ],
+    "minecraft:iron_axe": [
+      14295,
+      0.51635593
+    ],
+    "minecraft:iron_sword": [
+      14382,
+      0.049
+    ],
+    "minecraft:lingering_potion{Potion:\"minecraft:harming\"}": [
+      13372,
+      1.7269388
+    ],
+    "minecraft:netherite_axe": [
+      11231,
+      6.778693
+    ],
+    "minecraft:netherite_sword": [
+      11301,
+      6.632802
+    ],
+    "minecraft:snowball": [
+      14322,
+      0.46844563
+    ],
+    "minecraft:splash_potion{Potion:\"minecraft:harming\"}": [
+      13372,
+      1.7269388
+    ],
+    "minecraft:stone_axe": [
+      14498,
+      0.0374
+    ],
+    "minecraft:stone_sword": [
+      14606,
+      0.026599998
+    ],
+    "minecraft:tnt": [
+      13172,
+      1.9881918
+    ],
+    "minecraft:trident": [
+      12372,
+      4.357304
+    ],
+    "minecraft:wooden_axe": [
+      14682,
+      0.019
+    ],
+    "minecraft:wooden_sword": [
+      14745,
+      0.0127
+    ],
+    "yakurum:aquamarine_axe": [
+      12897,
+      2.3505628
+    ],
+    "yakurum:aquamarine_sword": [
+      13029,
+      2.1761835
+    ],
+    "yakurum:aquatic_bow": [
+      12020,
+      5.1228175
+    ],
+    "yakurum:big_water_blade": [
+      9896,
+      9.56036
+    ],
+    "yakurum:cobweb_wand": [
+      10072,
+      9.192951
+    ],
+    "yakurum:coral_axe": [
+      13786,
+      1.192264
+    ],
+    "yakurum:coral_sword": [
+      13882,
+      1.069158
+    ],
+    "yakurum:crystal_axe": [
+      14002,
+      0.91512454
+    ],
+    "yakurum:crystal_sword": [
+      14048,
+      0.8557993
+    ],
+    "yakurum:curse_sword": [
+      14048,
+      0.8557993
+    ],
+    "yakurum:fading_dagger": [
+      14048,
+      0.8557993
+    ],
+    "yakurum:fire_coral_blade": [
+      13926,
+      1.0127393
+    ],
+    "yakurum:frostarce_axe": [
+      14258,
+      0.57356006
+    ],
+    "yakurum:frostarce_sword": [
+      14386,
+      0.048599996
+    ],
+    "yakurum:guardian_axe": [
+      13070,
+      2.1221843
+    ],
+    "yakurum:guardian_sword": [
+      13210,
+      1.9384018
+    ],
+    "yakurum:harpoon_crossbow": [
+      10938,
+      7.3888206
+    ],
+    "yakurum:hockey_stick": [
+      14512,
+      0.036
+    ],
+    "yakurum:launcher_sword": [
+      14048,
+      0.8557993
+    ],
+    "yakurum:night_sword": [
+      12720,
+      3.4945223
+    ],
+    "yakurum:pearl_axe": [
+      14367,
+      0.3138377
+    ],
+    "yakurum:pearl_sword": [
+      14491,
+      0.038099997
+    ],
+    "yakurum:poseidon_trident": [
+      1556,
+      27.362492
+    ],
+    "yakurum:prismarine_axe": [
+      12458,
+      4.1618505
+    ],
+    "yakurum:prismarine_sword": [
+      12598,
+      3.826627
+    ],
+    "yakurum:sea_shell_sword": [
+      14694,
+      0.0178
+    ],
+    "yakurum:thunder_sword": [
+      12895,
+      2.3532112
+    ],
+    "yakurum:tnt_wand": [
+      11388,
+      6.4513593
+    ],
+    "yakurum:triton_trident": [
+      11916,
+      5.3436694
+    ],
+    "yakurum:water_axe": [
+      10124,
+      9.08446
+    ],
+    "yakurum:water_battleaxe": [
+      10060,
+      9.217992
+    ],
+    "yakurum:water_bow": [
+      6020,
+      17.745518
+    ],
+    "yakurum:water_crossbow": [
+      5738,
+      18.34768
+    ],
+    "yakurum:water_dagger": [
+      10371,
+      8.569478
+    ],
+    "yakurum:water_gun": [
+      7072,
+      15.506573
+    ],
+    "yakurum:water_katana": [
+      10198,
+      8.930115
+    ],
+    "yakurum:water_needle": [
+      10232,
+      8.859219
+    ],
+    "yakurum:water_shuriken": [
+      6672,
+      16.356468
+    ],
+    "yakurum:water_sword": [
+      10198,
+      8.930115
+    ],
+    "yakurum:water_triple_longbow": [
+      20,
+      30.707792
+    ]
+  },
+  "OFFHAND": {
+    "minecraft:ender_pearl": [
+      6325,
+      1.2102311
+    ],
+    "minecraft:flint_and_steel": [
+      6297,
+      1.2461817
+    ],
+    "minecraft:lava_bucket": [
+      5925,
+      1.7269388
+    ],
+    "minecraft:shield": [
+      6003,
+      1.6255897
+    ],
+    "yakurum:water_shield": [
+      275,
+      14.129373
+    ]
+  },
+  "FEET": {
+    "fuze_relics:slide_boots": [
+      5338,
+      1.2359076
+    ],
+    "minecraft:chainmail_boots": [
+      5866,
+      0.540316
+    ],
+    "minecraft:diamond_boots": [
+      4950,
+      1.7373508
+    ],
+    "minecraft:golden_boots": [
+      5932,
+      0.4136078
+    ],
+    "minecraft:iron_boots": [
+      5618,
+      0.8764657
+    ],
+    "minecraft:leather_boots": [
+      6214,
+      0.0244
+    ],
+    "minecraft:netherite_boots": [
+      4823,
+      1.9030677
+    ],
+    "mutantmonsters:mutant_skeleton_boots": [
+      5513,
+      1.0114565
+    ],
+    "yakurum:aquamarine_boots": [
+      5213,
+      1.39671
+    ],
+    "yakurum:coral_boots": [
+      5806,
+      0.62781405
+    ],
+    "yakurum:crystal_boots": [
+      6088,
+      0.036999997
+    ],
+    "yakurum:frostarce_boots": [
+      5238,
+      1.3644993
+    ],
+    "yakurum:guardian_boots": [
+      5213,
+      1.39671
+    ],
+    "yakurum:hockey_boots": [
+      5932,
+      0.4136078
+    ],
+    "yakurum:omega_boots": [
+      4950,
+      1.7373508
+    ],
+    "yakurum:pearl_boots": [
+      5815,
+      0.61522335
+    ],
+    "yakurum:poseidon_boots": [
+      61,
+      12.540222
+    ],
+    "yakurum:prismarine_boots": [
+      5293,
+      1.2937275
+    ],
+    "yakurum:rainbow_boots": [
+      5932,
+      0.4136078
+    ],
+    "yakurum:sea_shell_boots": [
+      6098,
+      0.036
+    ],
+    "yakurum:triton_boots": [
+      5013,
+      1.6554433
+    ],
+    "yakurum:water_boots": [
+      2910,
+      6.584849
+    ]
+  },
+  "LEGS": {
+    "minecraft:chainmail_leggings": [
+      6141,
+      0.540316
+    ],
+    "minecraft:diamond_leggings": [
+      5225,
+      1.7373508
+    ],
+    "minecraft:golden_leggings": [
+      6207,
+      0.4136078
+    ],
+    "minecraft:iron_leggings": [
+      5893,
+      0.8764657
+    ],
+    "minecraft:leather_leggings": [
+      6489,
+      0.0244
+    ],
+    "minecraft:netherite_leggings": [
+      5098,
+      1.9030677
+    ],
+    "mutantmonsters:mutant_skeleton_leggings": [
+      5788,
+      1.0114565
+    ],
+    "yakurum:aquamarine_leggings": [
+      5469,
+      1.4212085
+    ],
+    "yakurum:coral_leggings": [
+      6069,
+      0.64441437
+    ],
+    "yakurum:crystal_leggings": [
+      6353,
+      0.038
+    ],
+    "yakurum:frostarce_leggings": [
+      5506,
+      1.3735156
+    ],
+    "yakurum:guardian_leggings": [
+      5474,
+      1.41476
+    ],
+    "yakurum:hockey_leggings": [
+      6207,
+      0.4136078
+    ],
+    "yakurum:pearl_leggings": [
+      6084,
+      0.62363166
+    ],
+    "yakurum:poseidon_peplo": [
+      61,
+      13.119789
+    ],
+    "yakurum:prismarine_leggings": [
+      5547,
+      1.3207352
+    ],
+    "yakurum:sea_shell_leggings": [
+      6371,
+      0.036199998
+    ],
+    "yakurum:triton_leggings": [
+      5258,
+      1.6944221
+    ],
+    "yakurum:water_leggings": [
+      3032,
+      6.9036894
+    ]
+  },
+  "CHEST": {
+    "fuze_relics:jetpack_playbutton_chestplate": [
+      5808,
+      1.2359076
+    ],
+    "fuze_relics:pulsion_chestplate": [
+      5338,
+      1.8442572
+    ],
+    "minecraft:chainmail_chestplate": [
+      6336,
+      0.540316
+    ],
+    "minecraft:diamond_chestplate": [
+      5420,
+      1.7373508
+    ],
+    "minecraft:golden_chestplate": [
+      6402,
+      0.4136078
+    ],
+    "minecraft:iron_chestplate": [
+      6088,
+      0.8764657
+    ],
+    "minecraft:leather_chestplate": [
+      6684,
+      0.0244
+    ],
+    "minecraft:netherite_chestplate": [
+      5293,
+      1.9030677
+    ],
+    "mutantmonsters:mutant_skeleton_chestplate": [
+      5983,
+      1.0114565
+    ],
+    "quark:backpack": [
+      6684,
+      0.0244
+    ],
+    "yakurum:anticreeper_chestplate": [
+      6402,
+      0.4136078
+    ],
+    "yakurum:aquamarine_chestplate": [
+      5650,
+      1.4392704
+    ],
+    "yakurum:coral_chestplate": [
+      6254,
+      0.6581088
+    ],
+    "yakurum:crystal_chestplate": [
+      6540,
+      0.038799997
+    ],
+    "yakurum:frostarce_chestplate": [
+      5695,
+      1.3812455
+    ],
+    "yakurum:guardian_chestplate": [
+      5657,
+      1.4302384
+    ],
+    "yakurum:hockey_chestplate": [
+      6402,
+      0.4136078
+    ],
+    "yakurum:pearl_chestplate": [
+      6274,
+      0.63059485
+    ],
+    "yakurum:pearl_necklace": [
+      6742,
+      0.0186
+    ],
+    "yakurum:poseidon_himation": [
+      46,
+      13.562989
+    ],
+    "yakurum:prismarine_chestplate": [
+      5726,
+      1.3413242
+    ],
+    "yakurum:sea_shell_chestplate": [
+      6563,
+      0.0365
+    ],
+    "yakurum:triton_chestplate": [
+      5429,
+      1.7256376
+    ],
+    "yakurum:water_chestplate": [
+      3110,
+      7.1473346
+    ]
+  },
+  "HEAD": {
+    "fuze_relics:crown_helmet": [
+      6109,
+      1.2359076
+    ],
+    "minecraft:chainmail_helmet": [
+      6637,
+      0.540316
+    ],
+    "minecraft:diamond_helmet": [
+      5721,
+      1.7373508
+    ],
+    "minecraft:golden_helmet": [
+      6703,
+      0.4136078
+    ],
+    "minecraft:iron_helmet": [
+      6389,
+      0.8764657
+    ],
+    "minecraft:leather_helmet": [
+      6985,
+      0.0244
+    ],
+    "minecraft:netherite_helmet": [
+      5594,
+      1.9030677
+    ],
+    "minecraft:turtle_helmet": [
+      6333,
+      0.948558
+    ],
+    "quark:forgotten_hat": [
+      6985,
+      0.0244
+    ],
+    "yakurum:aquamarine_helmet": [
+      5932,
+      1.4637973
+    ],
+    "yakurum:coral_helmet": [
+      6543,
+      0.67440087
+    ],
+    "yakurum:crystal_helmet": [
+      6831,
+      0.0398
+    ],
+    "yakurum:damp_helmet": [
+      5932,
+      1.4637973
+    ],
+    "yakurum:frostarce_helmet": [
+      5989,
+      1.3902657
+    ],
+    "yakurum:guardian_helmet": [
+      5943,
+      1.4495956
+    ],
+    "yakurum:hockey_helmet": [
+      6703,
+      0.4136078
+    ],
+    "yakurum:pearl_helmet": [
+      6569,
+      0.63890266
+    ],
+    "yakurum:poseidon_crown": [
+      61,
+      14.167443
+    ],
+    "yakurum:prismarine_helmet": [
+      6006,
+      1.3683633
+    ],
+    "yakurum:sea_shell_helmet": [
+      6861,
+      0.036799997
+    ],
+    "yakurum:triton_helmet": [
+      5699,
+      1.766
+    ],
+    "yakurum:water_helmet": [
+      3252,
+      7.4783287
+    ]
+  }
+}

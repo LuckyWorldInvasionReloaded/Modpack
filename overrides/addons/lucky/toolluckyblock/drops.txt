@@ -1,0 +1,10 @@
+/Tool Lucky Block (Lucky World Invasion Reloaded)
+/Simple block: ~99% fail (smoke + lame sound), ~1% jackpot = a lucky tool (roulette/reveal).
+/NATIVE drops (type=sound/type=particle) -> no feedback in the chat.
+/@chance weights at luck 0: fail=99, jackpot=1 -> jackpot = 1/100 = 1%. Tunable.
+
+/ --- FAIL (~99%): smoke + broken machine sound ---
+group(type=particle,ID=large_smoke,size=(0.4,0.5,0.4),amount=30;type=sound,ID=block.fire.extinguish,volume=1.0;type=sound,ID=entity.villager.no,volume=0.7,delay=0.3)@chance=99
+
+/ --- JACKPOT (~1%): suspense roulette (beeps + fanfare) -> 1 lucky tool ---
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=luckytools:#randList(lucky_radar,lucky_wand,lucky_shield,lucky_spawner,lucky_idol,lucky_hammer,lucky_ring,lucky_belt),NBTTag=(LWLeg=1b),delay=2.2)@chance=1@luck=3

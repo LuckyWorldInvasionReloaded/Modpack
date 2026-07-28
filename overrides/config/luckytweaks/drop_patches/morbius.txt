@@ -1,0 +1,352 @@
+# Pack changes for 'Morbius-Build002-MC1.18.x', applied in memory over the author's own file.
+# What they do and why: ADDON_PATCHES.md.
+
+@addon Morbius-Build002-MC1.18.x
+
+@file drops.txt
+
+@match
+group(
+ID=infested_stone,amount=#rand(6,12),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Stone")));
+ID=infested_cobblestone,amount=#rand(8,16),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Cobblestone")));
+ID=infested_stone_bricks,amount=#rand(5,10),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Stone Bricks")));
+ID=infested_mossy_stone_bricks,amount=#rand(4,8),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Mossy Stone Bricks")));
+ID=infested_cracked_stone_bricks,amount=#rand(4,8),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Cracked Stone Bricks")));
+ID=infested_chiseled_stone_bricks,amount=#rand(3,6),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Chiseled Stone Bricks")));
+)@luck=0
+@replace
+group(
+ID=infested_stone,amount=#rand(6,12),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Stone")));
+ID=infested_cobblestone,amount=#rand(8,16),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Cobblestone")));
+ID=infested_stone_bricks,amount=#rand(5,10),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Stone Bricks")));
+ID=infested_mossy_stone_bricks,amount=#rand(4,8),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Mossy Stone Bricks")));
+ID=infested_cracked_stone_bricks,amount=#rand(4,8),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Cracked Stone Bricks")));
+ID=infested_chiseled_stone_bricks,amount=#rand(3,6),NBTTag=(display=(Name=#jsonStr(text="$7Morbed Chiseled Stone Bricks")))
+)@luck=0
+@end
+
+@match
+type=block,ID=chest,tileEntity=(Items=#chestLootTable("chests/ruined_portal))@luck=1@chance=0.9
+@replace
+type=block,ID=chest,tileEntity=(Items=#chestLootTable("chests/ruined_portal"))@luck=1@chance=0.9
+@end
+
+@match
+group(
+ID=ender_eye,amount=#rand(4,8),NBTTag=(display=(Name=#jsonStr(text="$5Morbin Eye")));
+ID=ender_pearl,amount=#rand(2,4),NBTTag=(display=(Name=#jsonStr(text="$5Morbin Pearl")))
+)@luck=2
+@replace
+group(
+ID=ender_pearl,amount=#rand(3,5),NBTTag=(display=(Name=#jsonStr(text="$5Morbin Pearl")))
+)@luck=2
+@end
+
+@match
+group(
+ID=gold_nugget,amount=#rand(32,65);
+ID=raw_gold,amount=#rand(12,24);
+ID=gold_ingot,amount=#rand(8,16);
+ID=spectral_arrow,amount=#rand(4,10);
+ID=golden_carrot,amount=#rand(3,7);
+ID=golden_apple,amount=#rand(1,3);
+ID=enchanted_golden_apple,amount=#randList(0,0,0,1);
+type=entity,ID=firework_rocket,NBTTag=(
+LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag=#randFireworksRocket)
+),amount=20,posOffset=#circleOffset(0,2)
+)@luck=2
+@replace
+group(
+    ID=gold_nugget,amount=#rand(32,65);
+    ID=raw_gold,amount=#rand(12,24);
+    ID=gold_ingot,amount=#rand(8,16);
+	ID=spectral_arrow,amount=#rand(4,10);
+	ID=golden_carrot,amount=#rand(3,7);
+    ID=golden_apple,amount=#rand(1,3);
+    ID=enchanted_golden_apple,amount=#randList(0,0,0,1);
+    type=entity,ID=firework_rocket,NBTTag=(
+    LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag=#randFireworksRocket)
+    ),amount=5,posOffset=#circleOffset(0,2)
+)@luck=2
+@end
+
+@match
+group(
+ID=iron_ingot,amount=#rand(8,16);
+ID=gold_ingot,amount=#rand(8,16);
+ID=diamond,amount=#rand(8,16);
+ID=emerald,amount=#rand(8,16);
+ID=lapis_lazuli,amount=#rand(8,16);
+type=entity,ID=firework_rocket,NBTTag=(
+LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag=#randFireworksRocket)
+),amount=20,posOffset=#circleOffset(0,2)
+)@luck=2@chance=0.8
+@replace
+group(
+    ID=iron_ingot,amount=#rand(8,16);
+    ID=gold_ingot,amount=#rand(8,16);
+    ID=diamond,amount=#rand(8,16);
+    ID=emerald,amount=#rand(8,16);
+    ID=lapis_lazuli,amount=#rand(8,16);
+    type=entity,ID=firework_rocket,NBTTag=(
+        LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag=#randFireworksRocket)
+    ),amount=5,posOffset=#circleOffset(0,2)
+)@luck=2@chance=0.8
+@end
+
+@match
+group(type=difficulty,ID=hard;type=entity,ID=wither_skeleton,posY=#bPosY+#rand(4,7),NBTTag=(
+HandItems=[(id=netherite_sword,Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+ArmorItems=[(id=netherite_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=netherite_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=netherite_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=netherite_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.03f,0.03f,0.03f,0.03f],
+ActiveEffects=[(Id=28,Duration=100000,Amplifier=3,ShowParticles=false)],
+Health=100,Attributes=[(Name="generic.max_health",Base=100f)],
+CustomName=#jsonStr(text="$5$lMichael Morbius"),CustomNameVisible=true)
+)@luck=-2
+@replace
+group(type=difficulty,ID=hard;type=entity,ID=wither_skeleton,posY=#bPosY+#rand(4,7),NBTTag=(LWCurse=1b,
+    HandItems=[(id=netherite_sword,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+    ArmorItems=[(id=netherite_boots,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=netherite_leggings,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=netherite_chestplate,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=netherite_helmet,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.03f,0.03f,0.03f,0.03f],
+	ActiveEffects=[(Id=28,Duration=100000,Amplifier=3,ShowParticles=false)],
+	Health=100,Attributes=[(Name="generic.max_health",Base=100f)],
+    CustomName=#jsonStr(text="$5$lMichael Morbius"),CustomNameVisible=true)
+)@luck=-2
+@end
+
+@match
+group(type=difficulty,ID=hard;type=entity,ID=bat,posY=#bPosY+#rand(3,9),posOffset=#circleOffset(#rand(1,9)),NBTTag=(
+Silent=true,
+ActiveEffects=[(Id=14,Duration=100000,Amplifier=1,ShowParticles=false)],
+Passengers=[(id=wither_skeleton,
+HandItems=[(id=bow,Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+ArmorItems=[(id=netherite_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=netherite_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=netherite_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=netherite_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.03f,0.03f,0.03f,0.03f],
+ActiveEffects=[(Id=28,Duration=100000,Amplifier=3,ShowParticles=false)],
+Health=80,Attributes=[(Name="generic.max_health",Base=80f)],
+CustomName=#jsonStr(text="$d$lFlying Morbius"),CustomNameVisible=true)
+)]
+)@luck=-2
+@replace
+group(type=difficulty,ID=hard;type=entity,ID=bat,posY=#bPosY+#rand(3,9),posOffset=#circleOffset(#rand(1,9)),NBTTag=(LWCurse=1b,
+    Silent=true,
+    ActiveEffects=[(Id=14,Duration=100000,Amplifier=1,ShowParticles=false)],
+    Passengers=[(id=wither_skeleton,NBTTag=(LWCurse=1b),
+    HandItems=[(id=bow,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+    ArmorItems=[(id=netherite_boots,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=netherite_leggings,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=netherite_chestplate,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=netherite_helmet,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.03f,0.03f,0.03f,0.03f],
+	ActiveEffects=[(Id=28,Duration=100000,Amplifier=3,ShowParticles=false)],
+	Health=80,Attributes=[(Name="generic.max_health",Base=80f)],
+    CustomName=#jsonStr(text="$d$lFlying Morbius"),CustomNameVisible=true)
+	)]
+)@luck=-2
+@end
+
+@match
+group(type=difficulty,ID=hard;type=entity,ID=zombie_villager,NBTTag=(
+HandItems=[(id=netherite_sword,Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+ArmorItems=[(id=netherite_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=netherite_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=netherite_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=netherite_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.03f,0.03f,0.03f,0.03f],
+ActiveEffects=[(Id=28,Duration=100000,Amplifier=3,ShowParticles=false)],
+Health=75,Attributes=[(Name="generic.max_health",Base=75f)],
+CustomName=#jsonStr(text="$2$lZombified Morbius"),CustomNameVisible=true)
+)@luck=-2
+@replace
+group(type=difficulty,ID=hard;type=entity,ID=zombie_villager,NBTTag=(LWCurse=1b,
+    HandItems=[(id=netherite_sword,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+    ArmorItems=[(id=netherite_boots,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=netherite_leggings,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=netherite_chestplate,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=netherite_helmet,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.03f,0.03f,0.03f,0.03f],
+	ActiveEffects=[(Id=28,Duration=100000,Amplifier=3,ShowParticles=false)],
+	Health=75,Attributes=[(Name="generic.max_health",Base=75f)],
+    CustomName=#jsonStr(text="$2$lZombified Morbius"),CustomNameVisible=true)
+)@luck=-2
+@end
+
+@match
+group(type=difficulty,ID=hard;type=entity,ID=wither)@chance=0.035@luck=-2
+@replace
+group(type=difficulty,ID=hard;type=entity,ID=wither,NBTTag=(LWCurse=1b))@chance=0.035@luck=-2
+@end
+
+@match
+group(type=difficulty,ID=hard;type=entity,ID=wither)@chance=0.05luck=-2
+@replace
+/ group(type=difficulty,ID=hard;type=entity,ID=wither)@chance=0.05@luck=-2
+@end
+
+@match
+group(type=entity,ID=creeper,amount=#rand(3,6),posOffset=#circleOffset(#rand(1,8));type=entity,ID=lightning_bolt,amount=#rand(3,5),posOffset=#circleOffset(#rand(1,8)))@luck=-2
+@replace
+group(type=entity,ID=creeper,NBTTag=(LWCurse=1b),amount=#rand(3,6),posOffset=#circleOffset(#rand(1,8));type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),amount=#rand(3,5),posOffset=#circleOffset(#rand(1,8)))@luck=-2
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Vulture Exo-Helmet\",\"color\":\"gray\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:netherite_helmet\",Count:1b,tag:{display:{Name:'{\"text\":\"Vulture Exo-Helmet\",\"color\":\"gray\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(2,7)},{id:\"minecraft:protection\",lvl:#rand(2,7)},{id:\"minecraft:unbreaking\",lvl:#rand(2,7)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(2,4)},{id:\"minecraft:#randList(respiration,aqua_affinity)\",lvl:#rand(2,5)}],
+AttributeModifiers:[
+{AttributeName:\"generic.knockback_resistance\",Name:\"generic.knockback_resistance\",Amount:0.05,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:3.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"},
+{AttributeName:\"generic.armor_toughness\",Name:\"generic.armor_toughness\",Amount:1.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:-0.2,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"}]}}}",commandSender="VIU")@luck=2@chance=0.7
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Vulture Exo-Helmet\",\"color\":\"gray\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:netherite_helmet\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"Vulture Exo-Helmet\",\"color\":\"gray\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(2,7)},{id:\"minecraft:protection\",lvl:#rand(2,7)},{id:\"minecraft:unbreaking\",lvl:#rand(2,7)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(2,4)},{id:\"minecraft:#randList(respiration,aqua_affinity)\",lvl:#rand(2,5)}],
+AttributeModifiers:[
+{AttributeName:\"generic.knockback_resistance\",Name:\"generic.knockback_resistance\",Amount:0.05,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:3.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"},
+{AttributeName:\"generic.armor_toughness\",Name:\"generic.armor_toughness\",Amount:1.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:-0.2,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"}]}}}",commandSender="VIU",delay=2.2)@luck=2@chance=0.7
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Vulture Exo-Chestplate\",\"color\":\"gray\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:netherite_chestplate\",Count:1b,tag:{display:{Name:'{\"text\":\"Vulture Exo-Chestplate\",\"color\":\"gray\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(2,7)},{id:\"minecraft:protection\",lvl:#rand(2,7)},{id:\"minecraft:unbreaking\",lvl:#rand(2,7)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(1,4)}],
+AttributeModifiers:[
+{AttributeName:\"generic.knockback_resistance\",Name:\"generic.knockback_resistance\",Amount:0.05,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:8.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"},
+{AttributeName:\"generic.armor_toughness\",Name:\"generic.armor_toughness\",Amount:1.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:-0.2,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"}]}}}",commandSender="VIU")@luck=2@chance=0.7
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Vulture Exo-Chestplate\",\"color\":\"gray\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:netherite_chestplate\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"Vulture Exo-Chestplate\",\"color\":\"gray\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(2,7)},{id:\"minecraft:protection\",lvl:#rand(2,7)},{id:\"minecraft:unbreaking\",lvl:#rand(2,7)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(1,4)}],
+AttributeModifiers:[
+{AttributeName:\"generic.knockback_resistance\",Name:\"generic.knockback_resistance\",Amount:0.05,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:8.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"},
+{AttributeName:\"generic.armor_toughness\",Name:\"generic.armor_toughness\",Amount:1.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:-0.2,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"}]}}}",commandSender="VIU",delay=2.2)@luck=2@chance=0.7
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Vulture Exo-Leggings\",\"color\":\"gray\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:netherite_leggings\",Count:1b,tag:{display:{Name:'{\"text\":\"Vulture Exo-Leggings\",\"color\":\"gray\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(2,7)},{id:\"minecraft:protection\",lvl:#rand(2,7)},{id:\"minecraft:unbreaking\",lvl:#rand(2,7)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(2,4)}],
+AttributeModifiers:[
+{AttributeName:\"generic.knockback_resistance\",Name:\"generic.knockback_resistance\",Amount:0.05,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:6.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"},
+{AttributeName:\"generic.armor_toughness\",Name:\"generic.armor_toughness\",Amount:1.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:-0.2,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"}]}}}",commandSender="VIU")@luck=2@chance=0.7
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Vulture Exo-Leggings\",\"color\":\"gray\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:netherite_leggings\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"Vulture Exo-Leggings\",\"color\":\"gray\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(2,7)},{id:\"minecraft:protection\",lvl:#rand(2,7)},{id:\"minecraft:unbreaking\",lvl:#rand(2,7)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(2,4)}],
+AttributeModifiers:[
+{AttributeName:\"generic.knockback_resistance\",Name:\"generic.knockback_resistance\",Amount:0.05,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:6.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"},
+{AttributeName:\"generic.armor_toughness\",Name:\"generic.armor_toughness\",Amount:1.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:-0.2,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"}]}}}",commandSender="VIU",delay=2.2)@luck=2@chance=0.7
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Vulture Exo-Boots\",\"color\":\"gray\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:netherite_boots\",Count:1b,tag:{display:{Name:'{\"text\":\"Vulture Exo-Boots\",\"color\":\"gray\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(2,7)},{id:\"minecraft:protection\",lvl:#rand(2,7)},{id:\"minecraft:unbreaking\",lvl:#rand(2,7)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(2,4)},{id:\"minecraft:#randList(depth_strider,feather_falling,soul_speed)\",lvl:#rand(2,5)}],
+AttributeModifiers:[
+{AttributeName:\"generic.knockback_resistance\",Name:\"generic.knockback_resistance\",Amount:0.05,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:3.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"},
+{AttributeName:\"generic.armor_toughness\",Name:\"generic.armor_toughness\",Amount:1.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:-0.2,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"}]}}}",commandSender="VIU")@luck=2@chance=0.7
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Vulture Exo-Boots\",\"color\":\"gray\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:netherite_boots\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"Vulture Exo-Boots\",\"color\":\"gray\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(2,7)},{id:\"minecraft:protection\",lvl:#rand(2,7)},{id:\"minecraft:unbreaking\",lvl:#rand(2,7)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(2,4)},{id:\"minecraft:#randList(depth_strider,feather_falling,soul_speed)\",lvl:#rand(2,5)}],
+AttributeModifiers:[
+{AttributeName:\"generic.knockback_resistance\",Name:\"generic.knockback_resistance\",Amount:0.05,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:3.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"},
+{AttributeName:\"generic.armor_toughness\",Name:\"generic.armor_toughness\",Amount:1.5,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:-0.2,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"}]}}}",commandSender="VIU",delay=2.2)@luck=2@chance=0.7
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"$4Morbius $7Lucky $bBlade\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"lucky:morbius_lucky_sword\",Count:1b,tag:{display:{Name:'{\"text\":\"$4Morbius $7Lucky $bBlade\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(smite,bane_of_arthropods)\",lvl:#rand(2,7)},{id:\"minecraft:#randList(sweeping_edge,looting)\",lvl:#rand(2,6)},{id:\"minecraft:unbreaking\",lvl:#rand(4,7)},{id:\"minecraft:sharpness\",lvl:#rand(5,13)},{id:\"minecraft:#randList(mending,knockback,fire_aspect)\",lvl:#rand(2,5)}],AttributeModifiers:[{AttributeName:\"generic.knockback_resistance\",Name:\"generic.knockback_resistance\",Amount:0.05,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"},{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:#rand(14,17),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"}]}}}",commandSender="VIU")@luck=2@chance=0.7
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"$4Morbius $7Lucky $bBlade\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"lucky:morbius_lucky_sword\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"$4Morbius $7Lucky $bBlade\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(smite,bane_of_arthropods)\",lvl:#rand(2,7)},{id:\"minecraft:#randList(sweeping_edge,looting)\",lvl:#rand(2,6)},{id:\"minecraft:unbreaking\",lvl:#rand(4,7)},{id:\"minecraft:sharpness\",lvl:#rand(5,13)},{id:\"minecraft:#randList(mending,knockback,fire_aspect)\",lvl:#rand(2,5)}],AttributeModifiers:[{AttributeName:\"generic.knockback_resistance\",Name:\"generic.knockback_resistance\",Amount:0.05,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"},{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:#rand(14,17),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"}]}}}",commandSender="VIU",delay=2.2)@luck=2@chance=0.7
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Scientist Helmet\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:diamond_helmet\",Count:1b,tag:{display:{Name:'{\"text\":\"Scientist Helmet\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(0,5)},{id:\"minecraft:protection\",lvl:#rand(0,4)},{id:\"minecraft:unbreaking\",lvl:#rand(0,5)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(0,3)},{id:\"minecraft:#randList(respiration,aqua_affinity)\",lvl:#rand(0,3)}],
+AttributeModifiers:[
+{AttributeName:\"generic.luck\",Name:\"generic.luck\",Amount:0.0#rand(2,8),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:3.25,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.1,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"}]}}}",commandSender="VIU")@luck=2@chance=0.9
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Scientist Helmet\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:diamond_helmet\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"Scientist Helmet\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(0,5)},{id:\"minecraft:protection\",lvl:#rand(0,4)},{id:\"minecraft:unbreaking\",lvl:#rand(0,5)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(0,3)},{id:\"minecraft:#randList(respiration,aqua_affinity)\",lvl:#rand(0,3)}],
+AttributeModifiers:[
+{AttributeName:\"generic.luck\",Name:\"generic.luck\",Amount:0.0#rand(2,8),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:3.25,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.1,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"head\"}]}}}",commandSender="VIU",delay=2.2)@luck=2@chance=0.9
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Scientist Chestplate\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:diamond_chestplate\",Count:1b,tag:{display:{Name:'{\"text\":\"Scientist Chestplate\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(0,5)},{id:\"minecraft:protection\",lvl:#rand(0,4)},{id:\"minecraft:unbreaking\",lvl:#rand(0,5)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(0,3)}],
+AttributeModifiers:[
+{AttributeName:\"generic.luck\",Name:\"generic.luck\",Amount:0.0#rand(2,8),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:8.25,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.1,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"}]}}}",commandSender="VIU")@luck=2@chance=0.9
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Scientist Chestplate\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:diamond_chestplate\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"Scientist Chestplate\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(0,5)},{id:\"minecraft:protection\",lvl:#rand(0,4)},{id:\"minecraft:unbreaking\",lvl:#rand(0,5)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(0,3)}],
+AttributeModifiers:[
+{AttributeName:\"generic.luck\",Name:\"generic.luck\",Amount:0.0#rand(2,8),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:8.25,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.1,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"chest\"}]}}}",commandSender="VIU",delay=2.2)@luck=2@chance=0.9
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Scientist Leggings\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:diamond_leggings\",Count:1b,tag:{display:{Name:'{\"text\":\"Scientist Leggings\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(0,5)},{id:\"minecraft:protection\",lvl:#rand(0,4)},{id:\"minecraft:unbreaking\",lvl:#rand(0,5)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(0,3)}],
+AttributeModifiers:[
+{AttributeName:\"generic.luck\",Name:\"generic.luck\",Amount:0.0#rand(2,8),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:6.25,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.1,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"}]}}}",commandSender="VIU")@luck=2@chance=0.9
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Scientist Leggings\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:diamond_leggings\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"Scientist Leggings\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(0,5)},{id:\"minecraft:protection\",lvl:#rand(0,4)},{id:\"minecraft:unbreaking\",lvl:#rand(0,5)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(0,3)}],
+AttributeModifiers:[
+{AttributeName:\"generic.luck\",Name:\"generic.luck\",Amount:0.0#rand(2,8),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:6.25,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.1,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"legs\"}]}}}",commandSender="VIU",delay=2.2)@luck=2@chance=0.9
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Scientist Boots\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:diamond_boots\",Count:1b,tag:{display:{Name:'{\"text\":\"Scientist Boots\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(0,5)},{id:\"minecraft:protection\",lvl:#rand(0,4)},{id:\"minecraft:unbreaking\",lvl:#rand(0,5)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(0,3)},{id:\"minecraft:#randList(depth_strider,feather_falling,soul_speed)\",lvl:#rand(0,3)}],
+AttributeModifiers:[
+{AttributeName:\"generic.luck\",Name:\"generic.luck\",Amount:0.0#rand(2,8),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:3.25,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.1,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"}]}}}",commandSender="VIU")@luck=2@chance=0.9
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Scientist Boots\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:diamond_boots\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"Scientist Boots\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(blast_protection,fire_protection,projectile_protection)\",lvl:#rand(0,5)},{id:\"minecraft:protection\",lvl:#rand(0,4)},{id:\"minecraft:unbreaking\",lvl:#rand(0,5)},{id:\"minecraft:#randList(thorns,mending)\",lvl:#rand(0,3)},{id:\"minecraft:#randList(depth_strider,feather_falling,soul_speed)\",lvl:#rand(0,3)}],
+AttributeModifiers:[
+{AttributeName:\"generic.luck\",Name:\"generic.luck\",Amount:0.0#rand(2,8),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"},
+{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:3.25,Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.1,Operation:1,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"feet\"}]}}}",commandSender="VIU",delay=2.2)@luck=2@chance=0.9
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Scientist Weapon\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:diamond_sword\",Count:1b,tag:{display:{Name:'{\"text\":\"Scientist Weapon\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(smite,bane_of_arthropods)\",lvl:#rand(0,5)},{id:\"minecraft:#randList(sweeping_edge,looting)\",lvl:#rand(0,4)},{id:\"minecraft:unbreaking\",lvl:#rand(0,5)},{id:\"minecraft:sharpness\",lvl:#rand(5,13)},{id:\"minecraft:#randList(mending,knockback,fire_aspect)\",lvl:#rand(0,3)}],
+AttributeModifiers:[
+{AttributeName:\"generic.luck\",Name:\"generic.luck\",Amount:0.0#rand(2,8),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"},
+{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:#rand(11,13),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"}]}}}",commandSender="VIU")@luck=2@chance=0.9
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Scientist Weapon\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:diamond_sword\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"Scientist Weapon\",\"color\":\"light_blue\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(smite,bane_of_arthropods)\",lvl:#rand(0,5)},{id:\"minecraft:#randList(sweeping_edge,looting)\",lvl:#rand(0,4)},{id:\"minecraft:unbreaking\",lvl:#rand(0,5)},{id:\"minecraft:sharpness\",lvl:#rand(5,13)},{id:\"minecraft:#randList(mending,knockback,fire_aspect)\",lvl:#rand(0,3)}],
+AttributeModifiers:[
+{AttributeName:\"generic.luck\",Name:\"generic.luck\",Amount:0.0#rand(2,8),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"},
+{AttributeName:\"generic.attack_damage\",Name:\"generic.attack_damage\",Amount:#rand(11,13),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"}]}}}",commandSender="VIU",delay=2.2)@luck=2@chance=0.9
+@end
+
+@match
+group(type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Morbin Stick\",\"color\":\"dark_green\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:stick\",Count:1b,tag:{display:{Name:'{\"text\":\"Morbin Stick\",\"color\":\"dark_green\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(smite,bane_of_arthropods)\",lvl:#rand(0,3)},{id:\"minecraft:#randList(sweeping_edge,looting)\",lvl:#rand(0,2)},{id:\"minecraft:unbreaking\",lvl:#rand(0,3)},{id:\"minecraft:power\",lvl:#rand(5,13)},{id:\"minecraft:#randList(mending,knockback,knockback)\",lvl:#rand(1,5)}],
+AttributeModifiers:[
+{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0.0#rand(1,4),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.#rand(2,4),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"}]}}}",commandSender="VIU")@luck=1@chance=0.9
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=command,ID="/summon item ~ ~ ~ {CustomNameVisible:1b,CustomName:'{\"text\":\"Morbin Stick\",\"color\":\"dark_green\",\"bold\":true,\"italic\":false}',Item:{id:\"minecraft:stick\",Count:1b,tag:{LWLeg:1b,display:{Name:'{\"text\":\"Morbin Stick\",\"color\":\"dark_green\",\"bold\":true,\"italic\":false}'},Enchantments:[{id:\"minecraft:#randList(smite,bane_of_arthropods)\",lvl:#rand(0,3)},{id:\"minecraft:#randList(sweeping_edge,looting)\",lvl:#rand(0,2)},{id:\"minecraft:unbreaking\",lvl:#rand(0,3)},{id:\"minecraft:power\",lvl:#rand(5,13)},{id:\"minecraft:#randList(mending,knockback,knockback)\",lvl:#rand(1,5)}],
+AttributeModifiers:[
+{AttributeName:\"generic.attack_speed\",Name:\"generic.attack_speed\",Amount:0.0#rand(1,4),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"},
+{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.#rand(2,4),Operation:0,UUID:[I;#rand(20,999999999),#rand(20,999999999),#rand(20,999999999),#rand(20,999999999)],Slot:\"mainhand\"}]}}}",commandSender="VIU",delay=2.2)@luck=1@chance=0.9
+@end
+
+@file natural_gen.txt
+
+@match
+type=block,ID=lucky:morbius_lucky_block@chance=56
+@replace
+type=block,ID=lucky:morbius_lucky_block@chance=200
+@end
+
+@match
+type=block,ID=lucky:morbius_lucky_block@chance=35
+@replace
+type=block,ID=lucky:morbius_lucky_block@chance=150
+@end
+
+@match
+type=block,ID=lucky:morbius_lucky_block@chance=15
+@replace
+type=block,ID=lucky:morbius_lucky_block@chance=100
+@end
+

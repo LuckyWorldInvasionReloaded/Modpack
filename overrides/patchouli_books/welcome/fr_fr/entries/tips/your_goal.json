@@ -1,0 +1,20 @@
+{
+  "name": "Votre Objectif",
+  "icon": "minecraft:dragon_head",
+  "category": "patchouli:tips",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)$(4)Votre Objectif$()$(br)Votre but est de terrasser l'Ender Dra.. $(l)Trigon$(). Il est un peu $(o)« différent »$(), alors préparez-vous bien :)"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:ender_dragon",
+      "name": "L'Ender Trigon",
+      "rotate": true,
+      "offset": -7.0,
+      "text": "$(o)Votre défi ultime. Il vous attend dans l'End.$()"
+    }
+  ]
+}

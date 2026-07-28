@@ -1,0 +1,7 @@
+{
+  "name": "Lucky Book",
+  "landing_text": "lwir.book.landing",
+  "version": "0",
+  "show_progress": false,
+  "model": "luckyxp:lucky_book"
+}

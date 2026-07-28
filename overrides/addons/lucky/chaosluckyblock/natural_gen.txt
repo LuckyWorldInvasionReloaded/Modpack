@@ -1,0 +1,10 @@
+>minecraft:overworld
+
+/ Total rate split between the 2 cases to match the Water Lucky Block (overworld 1/600).
+/ 1/750 + 1/3000 = 1/600 (same rate as Water). Firewell = ~1/5 of the chaos blocks.
+
+/ block alone (neutral luck)
+type=block,ID=lucky:chaosluckyblock@chance=750
+
+/ inside a firewell: true jackpot (luck ~50, the rare case)
+group(type=structure,ID=firewell;type=block,ID=lucky:chaosluckyblock,posY=#bPosY+3,tileEntity=(Luck=#rand(40,60)))@chance=3000

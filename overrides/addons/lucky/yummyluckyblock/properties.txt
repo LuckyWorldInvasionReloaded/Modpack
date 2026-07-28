@@ -1,0 +1,2 @@
+/ Yummy Lucky Block - food-themed block for Lucky World Invasion Reloaded.
+/ Gen rate = @chance in natural_gen.txt.

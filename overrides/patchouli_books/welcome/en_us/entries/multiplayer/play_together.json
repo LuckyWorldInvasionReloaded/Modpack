@@ -1,0 +1,20 @@
+{
+  "name": "Playing Multiplayer",
+  "icon": "minecraft:paper",
+  "category": "patchouli:multiplayer",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This pack is built for co-op, and getting a friend in takes seconds. No server to rent, nothing to set up."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Press $(l)Esc$(), click $(l)Open to LAN$(), then $(l)Start LAN World$().$(li)An address appears in chat. Share the $(l)IP$() with your friends, not the $(l)port$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Your friends open $(l)Multiplayer$() from the menu, add that address, and join.$(br)$(br)$(o)Everyone must be on the same version of the pack.$()"
+    }
+  ]
+}

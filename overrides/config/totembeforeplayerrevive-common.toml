@@ -1,0 +1,32 @@
+
+[general]
+	#Writes detailed server logs for lethal-hit checks, chosen totems, and cooldown skips.
+	debugLogging = false
+	#When true, any item whose registry id contains "totem" is treated as a valid totem-like item.
+	matchAnyItemIdContainingTotem = false
+	#Registry ids that should count as custom totems.
+	#Add custom totems by exact registry id, for example:
+	#  netheriteextras:totem_of_neverdying
+	#Use the exact id from your modpack if it differs.
+	allowedTotemIds = ["minecraft:totem_of_undying", "artifacts:chorus_totem", "born_in_chaos_v1:death_totem", "yakurum:pandilla_totem"]
+	#Check the player's offhand for a valid totem.
+	checkOffhand = true
+	#Check the player's main hand for a valid totem.
+	checkMainHand = true
+	#Check main inventory slots 0 upward for a valid totem.
+	checkInventory = false
+	#When true, search offhand and main hand before inventory. When false, search inventory before hands.
+	preferHandsBeforeInventory = true
+	#Per-player cooldown after this mod activates a totem. Prevents this mod from double-consuming during unusual event ordering.
+	#Range: 0 ~ 200
+	activationCooldownTicks = 10
+	#Remove active effects before adding totem effects, like vanilla Totems of Undying.
+	clearEffectsLikeVanilla = true
+	#Add vanilla-style regeneration, absorption, and fire resistance after activation.
+	addVanillaTotemEffects = true
+	#Multi-use totems, formatted as namespace:path=maxUses.
+	#The maxUses value is total activations, not extra activations.
+	#Malformed entries and entries with maxUses below 2 are ignored.
+	#Example: netheriteextras:totem_of_neverdying=4
+	multiUseTotems = ["yakurum:pandilla_totem=2"]
+

@@ -1,0 +1,19 @@
+{
+  "name": "Infuse & Merge",
+  "icon": "minecraft:anvil",
+  "category": "patchouli:tips",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)$(9)Infuse & Merge$()$(br)$(l)Infuse$() Lucky Blocks to make them luckier, it's very powerful! Check the recipes in $(l)JEI$() by pressing $(l)R$() and $(l)U$() on a Lucky Block.$(br2)You can also $(l)merge$() Lucky Blocks to add up their luck!"
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["lwir:textures/patchouli/recipes.png"],
+      "title": "Infuse & Merge",
+      "border": true,
+      "text": "$(o)Fusion and Infusion$()"
+    }
+  ]
+}

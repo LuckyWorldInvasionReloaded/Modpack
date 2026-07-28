@@ -1,0 +1,20 @@
+# Community lucky block addons, downloaded from their authors' official CurseForge files at first
+# launch instead of being shipped. Verified against the sha256 and size below before install; a
+# failed download leaves the game running without that addon and logs how to install it by hand.
+#
+# <target zip name in addons/lucky/> | <sha256> | <size in bytes> | <official url>
+
+# Pink first: its README forbids redistribution but allows the official link.
+Lucky Block Pink 8.4 [Everlasting Expansions].zip | 217ab6fb3bf4e2d30017565543d4179560a5a5ebfbad7fd4023541d85a0cea06 | 526907 | https://edge.forgecdn.net/files/4941/184/Lucky%20Block%20Pink%208.4%20%5BEverlasting%20Expansions%5D.zip
+AmongUsLuckyBlock-Build003-MC1.20.x.zip | fddf4963537527585491ef2c0f709ce69e9eb20ad87a5d793c61894e12e5bc4c | 49156 | https://edge.forgecdn.net/files/5721/620/AmongUsLuckyBlock-Build003-MC1.20.x.zip
+Morbius-Build002-MC1.18.x.zip | 04b62e5f959d2280f6f4de2da38063e78aecb8f4f1b1cd6112854e51e442d6f2 | 126462 | https://edge.forgecdn.net/files/3826/249/Morbius-Build002-MC1.18.x.zip
+WindElement-Build003-MC1.18.x.zip | c56d9c062001d040db8d95796382f2b12937ed1a96d01e910887649e9c108fd3 | 116799 | https://edge.forgecdn.net/files/3824/812/WindElement-Build003-MC1.18.x.zip
+EnergyElement-Build002-MC1.18.2.zip | d97b3a171ee10fcd57a33749f09517ecf05f21e994e4fbd644641215473a0447 | 58546 | https://edge.forgecdn.net/files/3824/801/EnergyElement-Build002-MC1.18.2.zip
+HeatElement-Build002-MC1.18.x.zip | f680a87535742f31f1c2c91a05601be01a7517753f602fab2a20c269fd59a5d4 | 96519 | https://edge.forgecdn.net/files/3824/787/HeatElement-Build002-MC1.18.x.zip
+FrostElement-Build002-MC1.18.x.zip | 54b58da572990f5dfedaa7a3c9c15b88de6367f07651a36d820ed643845124cc | 145221 | https://edge.forgecdn.net/files/3824/776/FrostElement-Build002-MC1.18.x.zip
+ElementalLuckyBlocks-1.20.2-v1.0.0.zip | 15d68a22cce1f5c160b225f39a52796c1ef3e2da6ea4c6b27237cc31e7e66800 | 2835775 | https://edge.forgecdn.net/files/5247/249/ElementalLuckyBlocks-1.20.2-v1.0.0.zip
+DesertLB-1.20.2.zip | 93c5f888729d689bb010d7e58c483411b765c1008ea1e3b144df7e10bd6f3562 | 58799 | https://edge.forgecdn.net/files/5063/327/DesertLB-1.20.2.zip
+SummerLB-1.20.2-02.zip | abfe2154df68ab22f986c3cfc057d1189e72cf04fe86434c6fa544304de239f3 | 35060 | https://edge.forgecdn.net/files/5087/833/SummerLB-1.20.2-02.zip
+FireLB-1.20.2-02.zip | 0bacd56e3b6ba2e0db814a252cd78f118e3a3d65fea7a6227a9ba788cfd680c8 | 57745 | https://edge.forgecdn.net/files/5090/034/FireLB-1.20.2-02.zip
+Water Lucky Block-v1.7.5.zip | 0ea54c0a07d98b5a560375c086f1c0f1ffe7f11675d9fe0ffa5d38aa5dbfa43b | 119034 | https://edge.forgecdn.net/files/6352/697/Water%20Lucky%20Block-v1.7.5.zip
+

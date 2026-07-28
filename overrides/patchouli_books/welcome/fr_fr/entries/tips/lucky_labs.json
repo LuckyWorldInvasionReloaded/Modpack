@@ -1,0 +1,20 @@
+{
+  "name": "Lucky XP & Lucky Labs",
+  "icon": "luckyxp:vending_machine_tools",
+  "category": "patchouli:tips",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Casser un $(l)Lucky Block$() vous donne de la $(l)$(9)Lucky XP$(). Dépensez-la aux $(l)Lucky Labs$() ! Vous y trouverez un $(l)scientifique fou$() qui peut vous rendre de sacrés services, et une machine qui renferme de puissants trésors. Mais choisissez vite — le labo va $(l)$(c)exploser$() !"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "luckyxp:lucky_merchant",
+      "name": "Le Scientifique Fou",
+      "scale": 0.7,
+      "offset": 0.3,
+      "text": "$(o)Il est un peu imprévisible, mais vous en aurez pour votre argent.$()"
+    }
+  ]
+}

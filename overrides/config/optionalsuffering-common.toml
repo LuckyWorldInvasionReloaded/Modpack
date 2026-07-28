@@ -1,0 +1,50 @@
+
+[gameplay]
+	#How the kill goal is counted:
+	#  true  = per-player; every online player must reach the goal for the invasion to end.
+	#  false = pooled; the invasion ends once all players together reach the goal.
+	perPlayer = true
+	#When the invasion is skipped, also remove the hostile mobs that are still around.
+	clearInvasionMobs = true
+	#Once an invasion is PASSED, also sweep away ordinary hostiles (the ones the invasion did
+	#not spawn: the night's normal mobs) within this many blocks of each player, so the night
+	#you just earned is actually quiet enough to sleep through. Named, leashed, boss and
+	#otherwise persistent mobs are never touched, so this cannot eat a pet, a boss fight or a
+	#spawn-egg mob. Set to 0 to only clear the invasion's own mobs.
+	#The default of 128 is the useful maximum: hostiles spawn within 128 blocks of a player and
+	#an ordinary one despawns on its own past that, so this already removes everything that
+	#exists around you and could walk back to you. Raising it further finds almost nothing.
+	#Range: 0 ~ 256
+	clearAllHostilesRadius = 128
+	#Show the live "enemies slain / goal" progress as a boss bar during an invasion.
+	showBossBar = true
+	#If true, invasions are blocked in the End until the Ender Dragon has been beaten in this world.
+	noEndInvasionBeforeDragon = true
+	#Kills required to skip the WORLD'S FIRST invasion.
+	#Range: 1 ~ 100000
+	firstInvasionKills = 20
+	#Kills required to skip every invasion after the first.
+	#Range: 1 ~ 100000
+	laterInvasionKills = 30
+	#If true, failing an invasion (it ends at dawn before you reach the goal) lowers your
+	#chance by 10%; passing one raises it back by 10% toward 0. Applied as a negative chance
+	#contribution to your lucky-block drops. Requires Lucky Tweaks + Lucky Stats installed.
+	invasionLuckMalusEnabled = true
+	#Lowest the chance malus can reach from failed invasions (a negative floor, in %).
+	#Range: -100 ~ 0
+	luckMalusFloor = -30
+	#Keep PureSuffering invasions on a steady rhythm when something forces the time of day
+	#(a lucky block that 'sets night', the Poseidon boss, etc.). When ON, the world time can
+	#never jump BACKWARDS: a forced change becomes a jump FORWARD to the next occurrence of
+	#that time of day, so the day counter is never reset and invasions keep their natural
+	#cadence and difficulty. A forced night that happens to land on an invasion night still
+	#triggers it (by design -- bad luck). Does nothing without PureSuffering. Default ON.
+	keepTimeMonotonic = true
+	#Grace period (in seconds) after a player enters or logs into a dimension during which an
+	#invasion cannot start on them: any invasion PureSuffering raises in that dimension while
+	#the timer runs is suppressed (its mobs cleared) instead of tracked, so you are not
+	#ambushed the instant you portal in. The first invasion PureSuffering raises AFTER the
+	#timer expires proceeds normally. Set to 0 to disable.
+	#Range: 0 ~ 300
+	dimensionEntryGraceSeconds = 25
+

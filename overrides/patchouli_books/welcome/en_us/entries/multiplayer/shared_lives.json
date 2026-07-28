@@ -1,0 +1,24 @@
+{
+  "name": "Shared Lives",
+  "icon": "minecraft:totem_of_undying",
+  "category": "patchouli:multiplayer",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "In co-op the team gets $(l)one life, plus one per player$().$(br)Example: $(l)$(2)3 lives for 2 players$(), shared by the team.$(br)They show as $(l)hearts$() on your screen, bottom right."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When you fall you don't die outright: you go $(l)down$(), and a team-mate can come and $(l)revive$() you. Being revived still costs a life."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "If $(l)everyone$() is down at once, you all respawn, but your $(l)$(c)gear drops$() where you fell. When the hearts run out, the run is over."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "You can change the number of lives in $(l)Mods > Lucky Tweaks$(), but the pack is $(l)meant$() to be played this way."
+    }
+  ]
+}

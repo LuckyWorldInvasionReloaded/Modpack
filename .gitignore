@@ -1,0 +1,16 @@
+shaderpacks/
+mods/
+build/
+.gradle/
+*.zip
+*.mrpack
+*.log
+
+# Player-preference files: NEVER ship in overrides or the launcher overwrites them on every update.
+# (options.txt = vanilla settings; config/luckystats_hud.json = personal HUD layout, the mod regenerates defaults if absent.)
+# Pack BALANCE configs (drops/rarity/caps, oculus shaders-off) stay tracked.
+overrides/options.txt
+overrides/config/luckystats_hud.json
+
+# Dev/test-only KubeJS scripts: never ship (header says "NEVER SHIP IN A RELEASE").
+overrides/kubejs/server_scripts/*TESTING*.js

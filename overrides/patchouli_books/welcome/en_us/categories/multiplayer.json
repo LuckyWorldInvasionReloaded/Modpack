@@ -1,0 +1,6 @@
+{
+  "name": "Multiplayer",
+  "description": "Better together (and $(c)harder$() too).",
+  "icon": "minecraft:player_head",
+  "sortnum": 1
+}

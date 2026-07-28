@@ -1,0 +1,20 @@
+{
+  "name": "Your Goal",
+  "icon": "minecraft:dragon_head",
+  "category": "patchouli:tips",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)$(4)Your Goal$()$(br)Your goal is to slay the Ender Dra.. $(l)Trigon$(). He's a little $(o)\"different\"$(), so go in prepared :)"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:ender_dragon",
+      "name": "The Ender Trigon",
+      "rotate": true,
+      "offset": -7.0,
+      "text": "$(o)Your final challenge. He awaits in The End.$()"
+    }
+  ]
+}

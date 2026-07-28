@@ -1,0 +1,17 @@
+{
+  "lucky_world_invasion.title": "Lucky World Invasion",
+  "lucky_world_invasion.stage.cant_use": "You can not use ",
+  "lucky_world_invasion.stage.need.2": "Need Stage 2",
+  "lucky_world_invasion.stage.need.3": "Need Stage 3",
+  "lucky_world_invasion.stage.need.4": "Need Stage 4",
+  "lucky_world_invasion.login.message.0": "Welcome to ",
+  "lucky_world_invasion.login.message.1": " Reloaded.",
+  "server_entry.title": "Need a server?",
+  "server_entry.description": "Click me to get your own server!",
+  "invasion.puresuffering.attack_on_titan": "Attack on Titan",
+  "invasion.puresuffering.creeper_crisis": "Creeper Crisis",
+  "invasion.puresuffering.skeleton_party": "Skeleton Party",
+  "invasion.puresuffering.mutant_mayhem": "Mutant Mayhem",
+  "invasion.puresuffering.octoomba_game": "Octoomba Game",
+  "lwir.book.landing": "$(l)Lucky World Invasion Reloaded$() is a very exciting modpack, but also a very punishing one.$(br2)Check out these few $(l:tips)survival tips$(/l) and start your adventure!"
+}

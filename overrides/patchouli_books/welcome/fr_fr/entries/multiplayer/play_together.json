@@ -1,0 +1,20 @@
+{
+  "name": "Jouer en multijoueur",
+  "icon": "minecraft:paper",
+  "category": "patchouli:multiplayer",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Ce pack est fait pour le coop, et inviter un ami prend quelques secondes. Aucun serveur à louer, rien à configurer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Appuyez sur $(l)Échap$(), cliquez sur $(l)Ouvrir au LAN$() puis $(l)Démarrer le monde en LAN$().$(li)Une adresse s'affiche dans le tchat. Partagez l'$(l)IP$() aux autres joueurs, pas le $(l)port$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Vos amis ouvrent $(l)Multijoueur$() dans le menu, ajoutent cette adresse et rejoignent.$(br)$(br)$(o)Tout le monde doit être sur la même version du pack.$()"
+    }
+  ]
+}

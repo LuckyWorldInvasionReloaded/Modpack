@@ -1,0 +1,15 @@
+
+#Shared-lives HUD: the row of hearts showing the team's remaining lives.
+[livesHud]
+	#Heart colour. One of: silver, gold, amethyst, emerald, sapphire, ruby, rose, onyx.
+	heartStyle = "emerald"
+	#Which screen corner the hearts anchor to: TOP_LEFT, TOP_RIGHT, BOT_LEFT, BOT_RIGHT.
+	corner = "BOT_RIGHT"
+	#Horizontal pixel offset from the corner (negative pulls left, away from a right edge).
+	#Range: -10000 ~ 10000
+	offsetX = -6
+	#Vertical pixel offset from the corner (negative lifts up, away from a bottom edge).
+	#The default -24 sits the hearts just above Improved Mobs' bottom-right difficulty text.
+	#Range: -10000 ~ 10000
+	offsetY = -24
+

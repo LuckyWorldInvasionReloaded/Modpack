@@ -1,0 +1,19 @@
+{
+  "name": "Les Invasions",
+  "icon": "minecraft:iron_sword",
+  "category": "patchouli:tips",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)$(4)Les Invasions$()$(br)Certaines nuits, des invasions se déchaînent et les monstres vous traquent. $(l)Équipez-vous$(), tuez-en un bon nombre, et vous pourrez dormir en paix !"
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["lwir:textures/patchouli/invasions.png"],
+      "title": "La Nuit de l'Invasion",
+      "border": true,
+      "text": "$(o)N'essayez pas de vous cacher, ou une malédiction pourrait s'abattre sur vous.$()"
+    }
+  ]
+}

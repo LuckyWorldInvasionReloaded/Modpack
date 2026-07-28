@@ -1,0 +1,28 @@
+/ jewels
+born_in_chaos_v1:pieceofdarkmetal=5
+born_in_chaos_v1:seedof_chaos=25
+born_in_chaos_v1:krampus_horn=75
+
+/ scraps (+2)
+born_in_chaos_v1:monster_flesh=2
+born_in_chaos_v1:monster_skin=2
+born_in_chaos_v1:corpse_maggot=2
+born_in_chaos_v1:spider_mandible=2
+
+/ refined common (+5)
+born_in_chaos_v1:bone_handle=5
+born_in_chaos_v1:fused_bone=5
+born_in_chaos_v1:dark_metal_nugget=5
+born_in_chaos_v1:phantom_powder=5
+
+/ fire dust (abundant firewell-chest drop) -- infusable at +4
+born_in_chaos_v1:fire_dust=4
+
+/ refined rare (+10)
+born_in_chaos_v1:dark_metal_ingot=10
+born_in_chaos_v1:dark_rod=10
+
+/ signature (+25 / +45; krampus horn 75 = one-shot full at the +75 cap)
+born_in_chaos_v1:smoldering_infernal_ember=25
+born_in_chaos_v1:stormcallers_horn=25
+born_in_chaos_v1:orbofthe_summoner=45

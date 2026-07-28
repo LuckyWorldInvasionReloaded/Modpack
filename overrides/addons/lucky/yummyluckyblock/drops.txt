@@ -1,0 +1,341 @@
+/Yummy Lucky Block (Lucky World Invasion Reloaded)
+/Food-themed block: solves the pack's food problem the lucky-block way.
+/Weights sum to ~100 at luck 0 -> each weight = its % chance. Within a tier, all drops share the SAME weight (equal odds). Tunable.
+/Distribution: 10% cursed / 25% disappointing / 33% solid meals / 20% good / 10% rare treats / ~1.3% legendary (base lowered from 2 so it doesn't dominate at high luck).
+
+/ ==== TIER -2 : CURSED FOOD (10%) ====
+/ rotten feast
+group(ID=rotten_flesh,amount=#rand(8,16);ID=spider_eye,amount=#rand(3,6);ID=poisonous_potato,amount=#rand(2,4);ID=pufferfish,amount=#rand(1,2);type=sound,ID=entity.player.burp,volume=1.0;type=sound,ID=entity.villager.no,volume=0.8,delay=0.4)@chance=2.5@luck=-2
+
+/ mysterious soups, BAD batch (random bad effects - identical name/color to the good batch, no spoiler)
+group:#rand(3,4):(ID=suspicious_stew,NBTTag=(display=(Name=#jsonStr(text="Mysterious Soup",color=dark_purple)),Effects=[(EffectId=19,EffectDuration=200)]);ID=suspicious_stew,NBTTag=(display=(Name=#jsonStr(text="Mysterious Soup",color=dark_purple)),Effects=[(EffectId=17,EffectDuration=400)]);ID=suspicious_stew,NBTTag=(display=(Name=#jsonStr(text="Mysterious Soup",color=dark_purple)),Effects=[(EffectId=20,EffectDuration=100)]);ID=suspicious_stew,NBTTag=(display=(Name=#jsonStr(text="Mysterious Soup",color=dark_purple)),Effects=[(EffectId=15,EffectDuration=200)]))@chance=2.5@luck=-2
+
+/ THE MICROWAVE v2: a giant microwave builds around the player - white body, dark front,
+/ corner trims, vents, control panel (buttons + lever + green screen), handle, power cable.
+/ Green LED title "10:00 / 750 watts" counts down (sped up). A REAL spinning turntable
+/ (item_display quartz plate + cake, rotated by interpolated data merges) cooks in the
+/ middle while netherrack heating coils keep eternal flames + extra fires spread for 20s.
+/ Then beep-beep-beep, DING, glass + barriers vanish, fires out, 2 cooked chickens.
+/ (door glass self-repairs every 0.5s; an invisible barrier shell outside the concrete
+/ makes the whole oven escape-proof until the door opens)
+group(
+type=command,ID="/gamerule commandBlockOutput false";
+type=command,ID="/fill ~-5 ~-1 ~-4 ~5 ~5 ~4 white_concrete hollow";
+type=command,ID="/fill ~-6 ~-2 ~-5 ~6 ~6 ~5 barrier outline";
+type=command,ID="/fill ~-6 ~-2 ~-6 ~6 ~6 ~-6 barrier";
+type=command,ID="/fill ~-5 ~-1 ~-4 ~5 ~5 ~-4 gray_concrete replace white_concrete";
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace gray_concrete";
+type=command,ID="/fill ~3 ~3 ~-4 ~4 ~3 ~-4 lime_stained_glass replace gray_concrete";
+type=command,ID="/fill ~-5 ~-1 ~4 ~-5 ~5 ~4 gray_concrete";
+type=command,ID="/fill ~5 ~-1 ~4 ~5 ~5 ~4 gray_concrete";
+type=command,ID="/fill ~-5 ~3 ~ ~-5 ~4 ~3 light_gray_concrete replace white_concrete";
+type=command,ID="/fill ~5 ~3 ~ ~5 ~4 ~3 light_gray_concrete replace white_concrete";
+type=command,ID="/fill ~-4 ~5 ~2 ~4 ~5 ~3 light_gray_concrete replace white_concrete";
+type=command,ID="/setblock ~3 ~1 ~-5 stone_button[facing=north]";
+type=command,ID="/setblock ~4 ~1 ~-5 stone_button[facing=north]";
+type=command,ID="/setblock ~3 ~2 ~-5 polished_blackstone_button[facing=north]";
+type=command,ID="/setblock ~4 ~ ~-5 lever[face=wall,facing=north]";
+type=command,ID="/setblock ~-3 ~ ~-5 end_rod[facing=north]";
+type=command,ID="/setblock ~-3 ~1 ~-5 end_rod[facing=north]";
+type=command,ID="/fill ~-2 ~-1 ~-2 ~2 ~-1 ~2 smooth_quartz replace white_concrete";
+type=command,ID="/fill ~-1 ~5 ~-1 ~1 ~5 ~1 sea_lantern replace white_concrete";
+type=command,ID="/fill ~0 ~-1 ~5 ~0 ~-1 ~7 black_concrete";
+type=command,ID="/tp #pName ~ ~ ~1.5 180 0";
+type=sound,ID=block.iron_door.close,volume=1.0,delay=0.2;
+type=command,ID="/title #pName times 5 60 15",delay=0.3;
+type=command,ID="/title #pName subtitle {"text":"750 watts","color":"green"}",delay=0.3;
+type=command,ID="/title #pName title {"text":"10:00","color":"green","bold":true}",delay=0.3;
+type=command,ID="/summon item_display ~ ~0.1 ~ {Tags:["mw_oven","mw_spin"],item:{id:"minecraft:smooth_quartz_slab",Count:1b},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2.8f,0.6f,2.8f]}}",delay=0.5;
+type=command,ID="/summon item_display ~ ~0.65 ~ {Tags:["mw_oven","mw_spin"],item:{id:"minecraft:cake",Count:1b},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.4f,1.4f,1.4f]}}",delay=0.5;
+type=command,ID="/execute as @e[tag=mw_spin,distance=..16] run data merge entity @s {start_interpolation:0,interpolation_duration:55,transformation:{left_rotation:[0f,0.70711f,0f,0.70711f]}}",delay=1;
+type=command,ID="/execute as @e[tag=mw_spin,distance=..16] run data merge entity @s {start_interpolation:0,interpolation_duration:55,transformation:{left_rotation:[0f,1f,0f,0f]}}",delay=3.5;
+type=command,ID="/execute as @e[tag=mw_spin,distance=..16] run data merge entity @s {start_interpolation:0,interpolation_duration:55,transformation:{left_rotation:[0f,0.70711f,0f,-0.70711f]}}",delay=6;
+type=command,ID="/execute as @e[tag=mw_spin,distance=..16] run data merge entity @s {start_interpolation:0,interpolation_duration:55,transformation:{left_rotation:[0f,0f,0f,-1f]}}",delay=8.5;
+type=command,ID="/execute as @e[tag=mw_spin,distance=..16] run data merge entity @s {start_interpolation:0,interpolation_duration:55,transformation:{left_rotation:[0f,-0.70711f,0f,-0.70711f]}}",delay=11;
+type=command,ID="/execute as @e[tag=mw_spin,distance=..16] run data merge entity @s {start_interpolation:0,interpolation_duration:55,transformation:{left_rotation:[0f,-1f,0f,0f]}}",delay=13.5;
+type=command,ID="/execute as @e[tag=mw_spin,distance=..16] run data merge entity @s {start_interpolation:0,interpolation_duration:55,transformation:{left_rotation:[0f,-0.70711f,0f,0.70711f]}}",delay=16;
+type=command,ID="/execute as @e[tag=mw_spin,distance=..16] run data merge entity @s {start_interpolation:0,interpolation_duration:55,transformation:{left_rotation:[0f,0f,0f,1f]}}",delay=18.5;
+type=command,ID="/title #pName title {"text":"07:30","color":"green","bold":true}",delay=5;
+type=command,ID="/title #pName title {"text":"05:00","color":"green","bold":true}",delay=10;
+type=command,ID="/title #pName title {"text":"02:30","color":"green","bold":true}",delay=15;
+type=command,ID="/title #pName title {"text":"00:00","color":"red","bold":true}",delay=19.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.45",delay=0.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.55",delay=0.5;
+type=command,ID="/playsound minecraft:block.beacon.ambient block @a[distance=..24] ~ ~2 ~ 3 0.8",delay=0.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.45",delay=2.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.55",delay=2.5;
+type=command,ID="/playsound minecraft:block.beacon.ambient block @a[distance=..24] ~ ~2 ~ 3 0.8",delay=2.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.45",delay=4.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.55",delay=4.5;
+type=command,ID="/playsound minecraft:block.beacon.ambient block @a[distance=..24] ~ ~2 ~ 3 0.8",delay=4.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.45",delay=6.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.55",delay=6.5;
+type=command,ID="/playsound minecraft:block.beacon.ambient block @a[distance=..24] ~ ~2 ~ 3 0.8",delay=6.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.45",delay=8.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.55",delay=8.5;
+type=command,ID="/playsound minecraft:block.beacon.ambient block @a[distance=..24] ~ ~2 ~ 3 0.8",delay=8.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.45",delay=10.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.55",delay=10.5;
+type=command,ID="/playsound minecraft:block.beacon.ambient block @a[distance=..24] ~ ~2 ~ 3 0.8",delay=10.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.45",delay=12.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.55",delay=12.5;
+type=command,ID="/playsound minecraft:block.beacon.ambient block @a[distance=..24] ~ ~2 ~ 3 0.8",delay=12.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.45",delay=14.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.55",delay=14.5;
+type=command,ID="/playsound minecraft:block.beacon.ambient block @a[distance=..24] ~ ~2 ~ 3 0.8",delay=14.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.45",delay=16.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.55",delay=16.5;
+type=command,ID="/playsound minecraft:block.beacon.ambient block @a[distance=..24] ~ ~2 ~ 3 0.8",delay=16.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.45",delay=18.5;
+type=command,ID="/playsound minecraft:entity.bee.loop block @a[distance=..24] ~ ~2 ~ 3 0.55",delay=18.5;
+type=command,ID="/playsound minecraft:block.beacon.ambient block @a[distance=..24] ~ ~2 ~ 3 0.8",delay=18.5;
+type=command,ID="/setblock ~3 ~-1 ~2 netherrack",delay=1;
+type=command,ID="/setblock ~-3 ~-1 ~2 netherrack",delay=1;
+type=command,ID="/setblock ~3 ~-1 ~-2 netherrack",delay=1;
+type=command,ID="/setblock ~-3 ~-1 ~-2 netherrack",delay=1;
+type=command,ID="/setblock ~4 ~-1 ~0 netherrack",delay=1;
+type=command,ID="/setblock ~-4 ~-1 ~0 netherrack",delay=1;
+type=block,ID=fire,posOffset=(3,0,2),delay=1.5;
+type=block,ID=fire,posOffset=(-3,0,2),delay=1.8;
+type=block,ID=fire,posOffset=(3,0,-2),delay=2.1;
+type=block,ID=fire,posOffset=(-3,0,-2),delay=2.4;
+type=block,ID=fire,posOffset=(4,0,0),delay=2.7;
+type=block,ID=fire,posOffset=(-4,0,0),delay=3;
+type=block,ID=fire,posOffset=(2,0,2),delay=3.5;
+type=block,ID=fire,posOffset=(-2,0,1),delay=4;
+type=block,ID=fire,posOffset=(0,0,3),delay=4.5;
+type=block,ID=fire,posOffset=(1,0,-2),delay=5;
+type=block,ID=fire,posOffset=(-1,0,3),delay=5.5;
+type=block,ID=fire,posOffset=(2,0,-1),delay=6;
+type=block,ID=fire,posOffset=(0,0,-3),delay=6.5;
+type=block,ID=fire,posOffset=(-2,0,-2),delay=7;
+type=block,ID=fire,posOffset=(1,0,2),delay=7.5;
+type=block,ID=fire,posOffset=(3,0,1),delay=8;
+type=block,ID=fire,posOffset=(-3,0,-1),delay=8.5;
+type=block,ID=fire,posOffset=(0,0,1),delay=9;
+type=block,ID=fire,posOffset=(-1,0,0),delay=10;
+type=block,ID=fire,posOffset=(2,0,0),delay=11;
+type=block,ID=fire,posOffset=(-2,0,2),delay=12;
+type=block,ID=fire,posOffset=(1,0,-3),delay=13;
+type=block,ID=fire,posOffset=(-1,0,-2),delay=14;
+type=block,ID=fire,posOffset=(0,0,2),delay=15;
+type=command,ID="/setblock ~1 ~-1 ~1 netherrack",delay=9;
+type=command,ID="/setblock ~-1 ~-1 ~1 netherrack",delay=9;
+type=command,ID="/setblock ~1 ~-1 ~-1 netherrack",delay=9;
+type=command,ID="/setblock ~-1 ~-1 ~-1 netherrack",delay=9;
+type=block,ID=fire,posOffset=(1,0,1),delay=9.3;
+type=block,ID=fire,posOffset=(-1,0,1),delay=9.6;
+type=block,ID=fire,posOffset=(1,0,-1),delay=9.9;
+type=block,ID=fire,posOffset=(-1,0,-1),delay=10.2;
+type=command,ID="/setblock ~2 ~-1 ~3 magma_block",delay=12;
+type=command,ID="/setblock ~-2 ~-1 ~3 magma_block",delay=12.5;
+type=command,ID="/setblock ~3 ~-1 ~0 magma_block",delay=13;
+type=command,ID="/setblock ~-3 ~-1 ~0 magma_block",delay=13.5;
+type=command,ID="/setblock ~2 ~-1 ~-3 magma_block",delay=14;
+type=command,ID="/setblock ~-2 ~-1 ~-3 magma_block",delay=14.5;
+type=command,ID="/setblock ~0 ~-1 ~4 magma_block",delay=15;
+type=command,ID="/setblock ~4 ~-1 ~2 magma_block",delay=15.5;
+type=command,ID="/setblock ~-4 ~-1 ~-2 magma_block",delay=16;
+type=command,ID="/fill ~-4 ~-1 ~-3 ~4 ~-1 ~-1 magma_block replace white_concrete",delay=16.5;
+type=command,ID="/fill ~-4 ~-1 ~0 ~4 ~-1 ~3 magma_block replace white_concrete",delay=17.2;
+type=command,ID="/fill ~-2 ~-1 ~-2 ~2 ~-1 ~2 magma_block replace smooth_quartz",delay=17.8;
+type=particle,ID=lava,size=(4,1,4),amount=40,delay=18;
+type=sound,ID=block.lava.pop,volume=1.0,delay=16.5;
+type=sound,ID=block.lava.pop,volume=1.0,delay=17.2;
+type=sound,ID=block.lava.pop,volume=1.0,delay=17.8;
+type=command,ID="/fill ~-4 ~ ~3 ~4 ~ ~3 fire replace air",delay=17;
+type=command,ID="/fill ~-4 ~ ~-3 ~4 ~ ~-3 fire replace air",delay=18;
+type=sound,ID=entity.blaze.ambient,volume=1.0,delay=14;
+type=sound,ID=entity.blaze.ambient,volume=1.0,delay=17;
+type=sound,ID=block.note_block.hat,volume=1.0,delay=17.5;
+type=sound,ID=block.note_block.hat,volume=1.0,delay=18;
+type=sound,ID=block.note_block.hat,volume=1.0,delay=18.5;
+type=sound,ID=block.note_block.hat,volume=1.0,delay=19;
+type=sound,ID=block.note_block.hat,volume=1.0,delay=19.5;
+type=particle,ID=flame,size=(2,1,2),amount=40,delay=3;
+type=particle,ID=flame,size=(3,2,3),amount=60,delay=6;
+type=particle,ID=flame,size=(4,2,4),amount=80,delay=9;
+type=particle,ID=flame,size=(4,3,4),amount=100,delay=12;
+type=particle,ID=flame,size=(4,3,4),amount=120,delay=15;
+type=particle,ID=flame,size=(4,3,4),amount=120,delay=18;
+type=particle,ID=lava,size=(3,1,3),amount=10,delay=8;
+type=particle,ID=lava,size=(3,1,3),amount=15,delay=13;
+type=particle,ID=lava,size=(3,1,3),amount=20,delay=17;
+type=particle,ID=smoke,size=(3,2,3),amount=30,delay=10;
+type=particle,ID=smoke,size=(4,3,4),amount=50,delay=14;
+type=particle,ID=smoke,size=(4,3,4),amount=70,delay=18;
+type=sound,ID=block.fire.ambient,volume=1.0,delay=3;
+type=sound,ID=block.fire.ambient,volume=1.0,delay=6.5;
+type=sound,ID=block.fire.ambient,volume=1.0,delay=10;
+type=sound,ID=block.fire.ambient,volume=1.0,delay=13.5;
+type=sound,ID=block.fire.ambient,volume=1.0,delay=17;
+type=sound,ID=block.blastfurnace.fire_crackle,volume=1.0,delay=5;
+type=sound,ID=block.blastfurnace.fire_crackle,volume=1.0,delay=9;
+type=sound,ID=block.blastfurnace.fire_crackle,volume=1.0,delay=12;
+type=sound,ID=block.blastfurnace.fire_crackle,volume=1.0,delay=16;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=0.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=1;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=1.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=2;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=2.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=3;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=3.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=4;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=4.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=5.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=6;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=6.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=7;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=7.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=8;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=8.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=9;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=9.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=10;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=10.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=11;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=11.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=12;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=12.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=13;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=13.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=14;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=14.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=15;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=15.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=16;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=16.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=17;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=17.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=18;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=18.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=19;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=19.5;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=20;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 glass replace air",delay=20.5;
+type=sound,ID=block.note_block.bit,volume=1.0,delay=20;
+type=sound,ID=block.note_block.bit,volume=1.0,delay=20.4;
+type=sound,ID=block.note_block.bit,volume=1.0,delay=20.8;
+type=command,ID="/fill ~-6 ~-2 ~-6 ~6 ~6 ~5 air replace barrier",delay=21.2;
+type=command,ID="/fill ~-6 ~-2 ~-6 ~6 ~-2 ~5 stone replace air",delay=21.2;
+type=command,ID="/fill ~-2 ~ ~-4 ~2 ~2 ~-4 air replace glass",delay=21.2;
+type=command,ID="/fill ~-2 ~-1 ~-2 ~2 ~-1 ~2 smooth_quartz replace netherrack",delay=21.2;
+type=command,ID="/fill ~-2 ~-1 ~-2 ~2 ~-1 ~2 smooth_quartz replace magma_block",delay=21.2;
+type=command,ID="/fill ~-4 ~-1 ~-4 ~4 ~-1 ~4 white_concrete replace netherrack",delay=21.2;
+type=command,ID="/fill ~-4 ~-1 ~-4 ~4 ~-1 ~4 white_concrete replace magma_block",delay=21.2;
+type=command,ID="/fill ~-4 ~ ~-3 ~4 ~4 ~3 air replace fire",delay=21.2;
+type=command,ID="/kill @e[tag=mw_oven,distance=..24]",delay=21.2;
+type=sound,ID=block.iron_door.open,volume=1.0,delay=21.2;
+type=sound,ID=block.note_block.bell,volume=1.0,delay=21.2;
+type=command,ID="/title #pName subtitle {"text":"Well done.","color":"gold"}",delay=21.3;
+type=command,ID="/title #pName title {"text":"DING!","color":"gold","bold":true}",delay=21.3;
+ID=cooked_chicken,NBTTag=(LWCurse=1b),amount=2,delay=21.5
+)@chance=2.5@luck=-2
+
+/ rude awakening: dropped into a boat, frozen sky-high for ~5s ("please stay still"), then free-fall.
+/ the boat cushions the landing, so it's a scare, not a death -- unless you panic and leave the boat.
+group(
+type=command,ID="/tag @p add yfaller",delay=0.0;
+type=command,ID="/tp @a[tag=yfaller,limit=1] ~ ~400 ~",delay=0.1;
+type=command,ID="/summon minecraft:boat ~ ~400 ~ {Type:"oak",Tags:["yummy_fall_boat"],NoGravity:1b,Invulnerable:1b}",delay=0.1;
+type=command,ID="/ride @a[tag=yfaller,limit=1] mount @e[tag=yummy_fall_boat,limit=1,sort=nearest]",delay=0.2;
+type=sound,ID=entity.warden.heartbeat,volume=1.0,delay=1.0;
+type=sound,ID=entity.warden.heartbeat,volume=1.0,delay=2.0;
+type=sound,ID=entity.warden.heartbeat,volume=1.0,delay=3.0;
+type=command,ID="/title @a[tag=yfaller] times 0 100 0",delay=3.2;
+type=command,ID="/title @a[tag=yfaller] title {"text":"please stay still","color":"red","bold":true}",delay=3.2;
+type=sound,ID=entity.warden.heartbeat,volume=1.0,delay=3.8;
+type=sound,ID=entity.warden.heartbeat,volume=1.0,delay=4.6;
+type=command,ID="/title @a[tag=yfaller] clear",delay=5.2;
+type=command,ID="/execute as @e[tag=yummy_fall_boat] run data merge entity @s {NoGravity:0b}",delay=5.2;
+type=sound,ID=entity.ghast.scream,volume=1.0,delay=5.3;
+type=command,ID="/tag @a[tag=yfaller] remove yfaller",delay=6.0;
+type=command,ID="/kill @e[tag=yummy_fall_boat]",delay=30.0
+)@chance=2.5@luck=-2
+
+/ ==== TIER -1 : DISAPPOINTING (25%) ====
+/ crumbs
+group(ID=bread,amount=#rand(1,2);ID=bowl,amount=#rand(1,3);type=sound,ID=entity.villager.no,volume=0.7)@chance=12.5@luck=-1
+
+/ raw food... go cook it yourself (+ the culprit)
+group(ID=beef,amount=#rand(2,4);ID=chicken,amount=#rand(2,3);type=entity,ID=chicken,amount=1)@chance=12.5@luck=-1
+
+/ ==== TIER 0 : SOLID MEALS (33%) ====
+/ steakhouse
+ID=cooked_beef,amount=#rand(3,6)@chance=4.7143@luck=0
+
+/ mixed grill
+group(ID=cooked_porkchop,amount=#rand(2,4);ID=cooked_chicken,amount=#rand(2,4))@chance=4.7143@luck=0
+
+/ le Cordon bleu (Fuze)
+ID=fuze_relics:blue_cord,amount=#rand(1,2)@chance=4.7143@luck=0
+
+/ bakery
+group(ID=bread,amount=#rand(4,8);ID=cookie,amount=#rand(4,8);ID=pumpkin_pie,amount=#rand(1,2))@chance=4.7143@luck=0
+
+/ candy bag (Born in Chaos)
+ID=born_in_chaos_v1:#randList(mint_candy,holiday_candy,coffee_candy,chocolate_heart),amount=#rand(2,4)@chance=4.7143@luck=0
+
+/ instant barbecue
+group(type=block,ID=campfire;ID=cooked_beef,amount=#rand(1,3);ID=cooked_chicken,amount=#rand(1,2);ID=cooked_mutton,amount=#rand(1,2))@chance=4.7143@luck=0
+
+/ tea time
+group(ID=cake;ID=milk_bucket;ID=honey_bottle,amount=#rand(1,2))@chance=4.7143@luck=0
+
+/ ==== TIER +1 : GOOD (20%) ====
+/ golden carrots
+ID=golden_carrot,amount=#rand(6,12)@chance=2.5@luck=1
+
+/ the big feast
+group(ID=cooked_beef,amount=#rand(16,24);ID=golden_carrot,amount=#rand(2,4))@chance=2.5@luck=1
+
+/ Fuze magic veggies
+ID=fuze_relics:#randList(magic_potato,magic_carrot,magic_beetroot),amount=#rand(2,3)@chance=2.5@luck=1
+
+/ Yakurum sweets
+group(ID=yakurum:spiral_cookie,amount=#rand(5,8);ID=yakurum:water_apple,amount=#rand(1,2))@chance=2.5@luck=1
+
+/ mysterious soups, GOOD batch (random good effects - identical name/color to the bad batch, no spoiler)
+group:#rand(3,4):(ID=suspicious_stew,NBTTag=(display=(Name=#jsonStr(text="Mysterious Soup",color=dark_purple)),Effects=[(EffectId=23,EffectDuration=10)]);ID=suspicious_stew,NBTTag=(display=(Name=#jsonStr(text="Mysterious Soup",color=dark_purple)),Effects=[(EffectId=10,EffectDuration=200)]);ID=suspicious_stew,NBTTag=(display=(Name=#jsonStr(text="Mysterious Soup",color=dark_purple)),Effects=[(EffectId=22,EffectDuration=600)]);ID=suspicious_stew,NBTTag=(display=(Name=#jsonStr(text="Mysterious Soup",color=dark_purple)),Effects=[(EffectId=5,EffectDuration=400)]))@chance=2.5@luck=1
+
+/ strawberry milkshake
+ID=potion,amount=#rand(1,2),NBTTag=(Potion="minecraft:water",CustomPotionColor=16758465,HideFlags=32,CustomPotionEffects=[(Id=23,Amplifier=1,Duration=5),(Id=10,Amplifier=1,Duration=200)],display=(Name=#jsonStr(text="Strawberry Milkshake",color=light_purple,bold=true)))@chance=2.5@luck=1
+
+/ ... le fameux Cheesecake (50/50 : divin ou immonde - custom KubeJS item)
+group(ID=kubejs:cheesecake_a_la_merde;type=sound,ID=block.note_block.bell,volume=1.0;type=particle,ID=heart,size=(0.4,0.5,0.4),amount=12)@chance=2.5@luck=1
+
+/ stack of cordons bleus (Fuze)
+ID=fuze_relics:blue_cord,amount=10@chance=2.5@luck=1
+
+/ ==== TIER +2 : RARE TREATS (10%) ====
+/ golden apples
+ID=golden_apple,amount=6@chance=2.0@luck=2
+
+/ water apples (Yakurum)
+ID=yakurum:water_apple,amount=2@chance=2.0@luck=2
+
+/ enchanted golden apple
+ID=enchanted_golden_apple@chance=2.0@luck=2
+
+/ enchanted water apple (Yakurum)
+ID=yakurum:enchanted.water_apple@chance=2.0@luck=2
+
+/ ==== TIER +3 : LEGENDARY (~1.3% base / ~25% at luck +100) : infinite food + a backpack feeding upgrade, with roulette fanfare ====
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=artifacts:eternal_steak,NBTTag=(LWLeg=1b),delay=2.2)@chance=0.14@luck=3
+
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=relics:infinity_ham,NBTTag=(LWLeg=1b),delay=2.2)@chance=0.14@luck=3
+
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=enchanted_golden_apple,amount=5,delay=2.2)@chance=0.14@luck=3
+
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=yakurum:enchanted.water_apple,amount=3,delay=2.2)@chance=0.14@luck=3
+
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=golden_apple,amount=10,delay=2.2)@chance=0.14@luck=3
+
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=yakurum:water_apple,amount=5,delay=2.2)@chance=0.14@luck=3
+
+/ advanced feeding upgrade (Sophisticated Backpacks) -- auto-eats from your backpack: never go hungry again
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=sophisticatedbackpacks:advanced_feeding_upgrade,NBTTag=(LWLeg=1b),delay=2.2)@chance=0.14@luck=3
+/ Mimic (Artifacts): +2 = 1 mimic, +3 = 3 mimics
+group(type=entity,ID=artifacts:mimic)@chance=2.0@luck=2
+group(type=entity,ID=artifacts:mimic,amount=3)@chance=0.14@luck=3

@@ -1,0 +1,76 @@
+# Pack changes for 'AmongUsLuckyBlock-Build003-MC1.20.x', applied in memory over the author's own file.
+# What they do and why: ADDON_PATCHES.md.
+
+@addon AmongUsLuckyBlock-Build003-MC1.20.x
+
+@file drops.txt
+
+@match
+group(type=block,ID=brewing_stand;ID=ender_pearl,amount=#rand(1,3);ID=blaze_rod,amount=#rand(1,3);ID=ghast_tear,amount=#rand(1,3);ID=gold_nugget,amount=#rand(1,3);ID=nether_wart,amount=#rand(1,3);ID=spider_eye,amount=#rand(1,3);ID=fermented_spider_eye,amount=#rand(1,3);ID=blaze_powder,amount=#rand(1,3);ID=magma_cream,amount=#rand(1,3);ID=ender_eye,amount=#rand(1,3);ID=glistering_melon_slice,amount=#rand(1,3);ID=rabbit_foot,amount=#rand(1,3);type=particle,ID=splashpotion,potion="fire_resistance")@luck=2
+@replace
+group(type=block,ID=brewing_stand;ID=ender_pearl,amount=#rand(1,3);ID=ghast_tear,amount=#rand(1,3);ID=gold_nugget,amount=#rand(1,3);ID=nether_wart,amount=#rand(1,3);ID=spider_eye,amount=#rand(1,3);ID=fermented_spider_eye,amount=#rand(1,3);ID=magma_cream,amount=#rand(1,3);ID=glistering_melon_slice,amount=#rand(1,3);ID=rabbit_foot,amount=#rand(1,3);type=particle,ID=splashpotion,potion="fire_resistance")@luck=2
+@end
+
+@match
+group(type=entity,ID=lightning_bolt;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(1,2)),delay=0.5;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(1,3)),delay=1;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(1,3)),delay=1.5;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(1,4)),delay=2;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(1,4)),delay=2.5;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(1,5)),delay=3;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(1,5)),delay=3.5;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(2,6)),delay=4;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(2,6)),delay=4.5;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(2,7)),delay=4;
+type=entity,ID=lightning_bolt,posOffset=#circleOffset(#rand(3,7)),delay=4.5;
+type=entity,ID=lightning_bolt,amount=#rand(2,4),posOffset=#circleOffset(#rand(3,8)),delay=5)@luck=-2
+@replace
+group(type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b);
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(1,2)),delay=0.5;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(1,3)),delay=1;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(1,3)),delay=1.5;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(1,4)),delay=2;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(1,4)),delay=2.5;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(1,5)),delay=3;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(1,5)),delay=3.5;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(2,6)),delay=4;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(2,6)),delay=4.5;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(2,7)),delay=4;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),posOffset=#circleOffset(#rand(3,7)),delay=4.5;
+type=entity,ID=lightning_bolt,NBTTag=(LWCurse=1b),amount=#rand(2,4),posOffset=#circleOffset(#rand(3,8)),delay=5)@luck=-2
+@end
+
+@match
+group(ID=lucky:amongus_lucky_sword,NBTTag=(Damage=7199,display=(Name=#jsonStr(text="$4$lImpostor Attack Knife")),Enchantments=[(id=sharpness,lvl=100)]);
+type=entity,ID=firework_rocket,NBTTag=(LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag=#randFireworksRocket)),amount=40,posOffset=#circleOffset(0,2))@luck=2@chance=0.6
+@replace
+group(ID=lucky:amongus_lucky_sword,NBTTag=(Damage=7199,display=(Name=#jsonStr(text="$4$lImpostor Attack Knife")),Enchantments=[(id=sharpness,lvl=10)]);
+type=entity,ID=firework_rocket,NBTTag=(LifeTime=20,FireworksItem=(id=firework_rocket,Count=1,tag=#randFireworksRocket)),amount=5,posOffset=#circleOffset(0,2))@luck=2@chance=0.6
+@end
+
+@file natural_gen.txt
+
+@match
+>minecraft:overworld
+@replace
+/ Lucky World Invasion Reloaded: AmongUs Lucky Block enabled in the NETHER only
+/ (needed to craft the LWI lucky block). Overworld (75) and End (25) stay OFF.
+/ Original values were 75 / 35 / 25 in overworld / nether / end -- uncomment to restore.
+
+>minecraft:overworld
+@end
+
+@match
+/ single block
+type=block,ID=lucky:amongus_lucky_block@chance=75
+@replace
+/type=block,ID=lucky:amongus_lucky_block@chance=75
+@end
+
+@match
+type=block,ID=lucky:amongus_lucky_block@chance=25
+@replace
+/type=block,ID=lucky:amongus_lucky_block@chance=25
+@end
+

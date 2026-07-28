@@ -1,0 +1,14 @@
+/ sweet
+cookie=1
+honey_bottle=5
+cake=15
+golden_carrot=10
+golden_apple=20
+enchanted_golden_apple=50
+
+/ sour
+rotten_flesh=-5
+poisonous_potato=-10
+spider_eye=-10
+fermented_spider_eye=-20
+pufferfish=-20

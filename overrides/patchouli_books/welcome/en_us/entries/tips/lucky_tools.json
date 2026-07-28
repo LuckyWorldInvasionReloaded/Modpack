@@ -1,0 +1,18 @@
+{
+  "name": "Lucky Tools",
+  "icon": "lucky:toolluckyblock",
+  "category": "patchouli:tips",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)$(6)Lucky Tools$()$(br)$(l)Tools Lucky Blocks$() drop powerful $(l)Lucky Tools$() that could change your whole run. But only a $(l)$(c)1%$() chance per break. $(o)Pure gambling!$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "luckytools:lucky_ring,luckytools:lucky_belt,luckytools:lucky_hammer,luckytools:lucky_radar,luckytools:lucky_shield,luckytools:lucky_spawner,luckytools:lucky_idol,luckytools:lucky_wand,lucky:toolluckyblock",
+      "title": "The Lucky Tools",
+      "text": "$(o)All Lucky Tools must be used on lucky blocks. Read each tool's tooltip, try it on a lucky block, and discover its purpose!$()"
+    }
+  ]
+}

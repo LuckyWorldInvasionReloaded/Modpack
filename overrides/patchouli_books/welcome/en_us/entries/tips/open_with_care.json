@@ -1,0 +1,19 @@
+{
+  "name": "Open With Care",
+  "icon": "minecraft:cobblestone",
+  "category": "patchouli:tips",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)$(c)Open With Care$()$(br)Lucky Blocks come with their fair share of punishments too. Putting a $(l)block between you and them$() could save your life!"
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["lwir:textures/patchouli/open_with_care.png"],
+      "title": "Don't forget!",
+      "text": "$(o)Dirt is love, dirt is life$()",
+      "border": true
+    }
+  ]
+}

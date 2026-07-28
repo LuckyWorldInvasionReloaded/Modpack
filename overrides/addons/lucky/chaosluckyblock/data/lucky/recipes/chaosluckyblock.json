@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:blackstone"
+    },
+    "L": {
+      "item": "lucky:lucky_block"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "BLB",
+    "BBB"
+  ],
+  "result": {
+    "item": "lucky:chaosluckyblock"
+  }
+}

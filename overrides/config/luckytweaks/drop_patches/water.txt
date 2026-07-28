@@ -1,0 +1,479 @@
+# Pack changes for 'Water Lucky Block-v1.7.5', applied in memory over the author's own file.
+# What they do and why: ADDON_PATCHES.md.
+
+@addon Water Lucky Block-v1.7.5
+
+@file drops.txt
+
+@match
+group(type=fill,ID=air,size=(1,51,1);
+group(
+NBTTag=(BlockState=(Name=red_concrete)),posY=#bPosY+5;
+NBTTag=(BlockState=(Name=orange_concrete)),posY=#bPosY+10;
+NBTTag=(BlockState=(Name=yellow_concrete)),posY=#bPosY+15;
+NBTTag=(BlockState=(Name=lime_concrete)),posY=#bPosY+20;
+NBTTag=(BlockState=(Name=light_blue_concrete)),posY=#bPosY+25;
+NBTTag=(BlockState=(Name=blue_concrete)),posY=#bPosY+30;
+NBTTag=(BlockState=(Name=purple_concrete)),posY=#bPosY+35;
+NBTTag=(BlockState=(Name=magenta_concrete)),posY=#bPosY+40;
+NBTTag=(BlockState=(Name=pink_concrete)),posY=#bPosY+45
+),type=entity,ID=falling_block;
+type=entity,ID=falling_block,NBTTag=(BlockState=(Name=netherite_block)),posY=#bPosY+50;
+type=entity,ID=lightning_bolt,posY=#bPosY+10,delay=5.3
+type=entity,ID=lightning_bolt,posY=#bPosY+10,delay=5.3;
+type=entity,ID=lightning_bolt,posY=#bPosY+10,delay=5.3;
+type=entity,ID=lightning_bolt,posY=#bPosY+10,delay=5.3)@luck=2
+@replace
+group(type=fill,ID=air,size=(1,51,1);
+    group(
+        NBTTag=(BlockState=(Name=red_concrete)),posY=#bPosY+5;
+        NBTTag=(BlockState=(Name=orange_concrete)),posY=#bPosY+10;
+        NBTTag=(BlockState=(Name=yellow_concrete)),posY=#bPosY+15;
+        NBTTag=(BlockState=(Name=lime_concrete)),posY=#bPosY+20;
+        NBTTag=(BlockState=(Name=light_blue_concrete)),posY=#bPosY+25;
+        NBTTag=(BlockState=(Name=blue_concrete)),posY=#bPosY+30;
+        NBTTag=(BlockState=(Name=purple_concrete)),posY=#bPosY+35;
+        NBTTag=(BlockState=(Name=magenta_concrete)),posY=#bPosY+40;
+        NBTTag=(BlockState=(Name=pink_concrete)),posY=#bPosY+45
+    ),type=entity,ID=falling_block;
+    type=entity,ID=falling_block,NBTTag=(BlockState=(Name=netherite_block)),posY=#bPosY+50;
+    type=entity,ID=lightning_bolt,posY=#bPosY+10,delay=5.3;
+    type=entity,ID=lightning_bolt,posY=#bPosY+10,delay=5.3;
+    type=entity,ID=lightning_bolt,posY=#bPosY+10,delay=5.3;
+    type=entity,ID=lightning_bolt,posY=#bPosY+10,delay=5.3)@luck=2
+@end
+
+@match
+ID=heart_of_the_sea,amount=#rand(2,5)@@luck=2
+@replace
+ID=heart_of_the_sea,amount=#rand(2,5)@luck=2
+@end
+
+@match
+ID=yakurum:sacred_heart,amount=#rand(3,5)@luck=1
+ID=yakurum:dew_gout,amount=#rand(5,7)@luck=1
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=yakurum:sacred_heart,NBTTag=(LWLeg=1b),amount=#rand(3,5),delay=2.2)@luck=1
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=yakurum:dew_gout,NBTTag=(LWLeg=1b),amount=1,delay=2.2)@luck=2
+@end
+
+@match
+ID=yakurum:magic_coral,amount=#rand(2,3)@luck=1
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=yakurum:magic_coral,NBTTag=(LWLeg=1b),amount=#rand(1,2),delay=2.2)@luck=1
+@end
+
+@match
+ID=yakurum:pink_orb@luck=2
+ID=yakurum:pandilla_totem,amount=#rand(1,3)@luck=2@chance=0.5
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=yakurum:pink_orb,NBTTag=(LWLeg=1b),delay=2.2)@luck=2
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=yakurum:pandilla_totem,amount=1,NBTTag=(LWLeg=1b,uses=2),delay=2.2)@luck=3@chance=0.5
+@end
+
+@match
+ID=yakurum:angel_wings@luck=3
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=yakurum:angel_wings,NBTTag=(LWLeg=1b),delay=2.2)@luck=3
+@end
+
+@match
+ID=yakurum:omega_boots@luck=2
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=yakurum:omega_boots,NBTTag=(LWLeg=1b),delay=2.2)@luck=2
+@end
+
+@match
+ID=yakurum:kraken_blade@luck=3
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;ID=yakurum:kraken_blade,NBTTag=(LWLeg=1b),delay=2.2)@luck=3
+@end
+
+@match
+group(ID=fishing_rod;yakurum:golden_fish,amount=#rand(3,6))@luck=2
+@replace
+group(ID=fishing_rod;ID=yakurum:golden_fish,amount=#rand(3,6))@luck=2
+@end
+
+@match
+group:1:(group(type=difficulty,ID=hard;type=entity,ID=yakurum:poseidon,NBTTag=(
+HandItems=[(id=yakurum:poseidon_trident,Count=1,tag=(Enchantments=[(id=sharpness, lvl=5),(id=smite, lvl=5),(id=bane_of_arthropods, lvl=5),(id=knockback, lvl=5),(id=looting, lvl=5),(id=sweeping, lvl=5),(id=unbreaking, lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Trident",color=gold,bold=true,strikethrough=true,underline=true))))],
+ArmorItems=[(id=yakurum:poseidon_boots,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=depth_strider,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Boots",color=gold,bold=true,strikethrough=true,underline=true)))),
+(id=yakurum:poseidon_peplo,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=swift_sneak,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Peplo",color=gold,bold=true,strikethrough=true,underline=true)))),
+(id=yakurum:poseidon_himation,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=thorns,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Himation",color=gold,bold=true,strikethrough=true,underline=true)))),
+(id=yakurum:poseidon_crown,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=aqua_affinity,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Crown",color=gold,bold=true,strikethrough=true,underline=true))))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+CustomName=#jsonStr(text="Poseidon",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true));
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:king_triton,NBTTag=(
+HandItems=[(id=yakurum:triton_trident,Count=1,tag=(Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Triton Trident",color=dark_aqua,bold=true,strikethrough=true,underline=true))))],
+ArmorItems=[(id=yakurum:triton_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments,display=(Name=#jsonStr(text="Triton Boots",color=dark_aqua,bold=true,strikethrough=true,underline=true)))),
+(id=yakurum:triton_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments,display=(Name=#jsonStr(text="Triton Leggings",color=dark_aqua,bold=true,strikethrough=true,underline=true)))),
+(id=yakurum:triton_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments,display=(Name=#jsonStr(text="Triton Chestplate",color=dark_aqua,bold=true,strikethrough=true,underline=true)))),
+(id=yakurum:triton_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments,display=(Name=#jsonStr(text="Triton Helmet",color=dark_aqua,bold=true,strikethrough=true,underline=true))))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+CustomName=#jsonStr(text="King Triton",color=dark_aqua,bold=true,strikethrough=true,underline=true),CustomNameVisible=true))
+)@luck=-3
+@replace
+group:1:(group(type=difficulty,ID=hard;type=entity,ID=yakurum:poseidon,NBTTag=(LWCurse=1b,
+    HandItems=[(id=yakurum:poseidon_trident,Count=1,tag=(Enchantments=[(id=sharpness, lvl=5),(id=smite, lvl=5),(id=bane_of_arthropods, lvl=5),(id=knockback, lvl=5),(id=looting, lvl=5),(id=sweeping, lvl=5),(id=unbreaking, lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Trident",color=gold,bold=true,strikethrough=true,underline=true))))],
+    ArmorItems=[(id=yakurum:poseidon_boots,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=depth_strider,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Boots",color=gold,bold=true,strikethrough=true,underline=true)))),
+	(id=yakurum:poseidon_peplo,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=swift_sneak,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Peplo",color=gold,bold=true,strikethrough=true,underline=true)))),
+	(id=yakurum:poseidon_himation,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=thorns,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Himation",color=gold,bold=true,strikethrough=true,underline=true)))),
+	(id=yakurum:poseidon_crown,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=aqua_affinity,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Crown",color=gold,bold=true,strikethrough=true,underline=true))))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+    CustomName=#jsonStr(text="Poseidon",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true));
+	
+	group(type=difficulty,ID=hard;type=entity,ID=yakurum:king_triton,NBTTag=(LWCurse=1b,
+    HandItems=[(id=yakurum:triton_trident,Count=1,tag=(Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Triton Trident",color=dark_aqua,bold=true,strikethrough=true,underline=true))))],
+    ArmorItems=[(id=yakurum:triton_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments,display=(Name=#jsonStr(text="Triton Boots",color=dark_aqua,bold=true,strikethrough=true,underline=true)))),
+	(id=yakurum:triton_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments,display=(Name=#jsonStr(text="Triton Leggings",color=dark_aqua,bold=true,strikethrough=true,underline=true)))),
+	(id=yakurum:triton_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments,display=(Name=#jsonStr(text="Triton Chestplate",color=dark_aqua,bold=true,strikethrough=true,underline=true)))),
+	(id=yakurum:triton_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments,display=(Name=#jsonStr(text="Triton Helmet",color=dark_aqua,bold=true,strikethrough=true,underline=true))))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+    CustomName=#jsonStr(text="King Triton",color=dark_aqua,bold=true,strikethrough=true,underline=true),CustomNameVisible=true))
+)@luck=-3
+@end
+
+@match
+group:1:(group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(
+Variant=#rand(0,3),
+HandItems=[(id=yakurum:water_sword,Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+ArmorItems=[(id=yakurum:water_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true));
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(
+Variant=#rand(0,3),
+HandItems=[(id=yakurum:water_katana,Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+ArmorItems=[(id=yakurum:water_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true));
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(
+Variant=#rand(0,3),
+HandItems=[(id=yakurum:big_water_blade,Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+ArmorItems=[(id=yakurum:water_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true));
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(
+HandItems=[(id=yakurum:water_axe,Count=1,tag=(Enchantments=#luckyAxeEnchantments))],
+ArmorItems=[(id=yakurum:water_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true));
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(
+HandItems=[(id=yakurum:water_scythe,Count=1,tag=(Enchantments=#luckyAxeEnchantments))],
+ArmorItems=[(id=yakurum:water_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true));
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(
+HandItems=[(id=yakurum:water_battleaxe,Count=1,tag=(Enchantments=#luckyAxeEnchantments))],
+ArmorItems=[(id=yakurum:water_boots,Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true))
+)@luck=-2
+@replace
+group:1:(group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(LWCurse=1b,
+	Variant=#rand(0,3),
+    HandItems=[(id=yakurum:water_sword,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+    ArmorItems=[(id=yakurum:water_boots,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+    CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true));
+	
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(LWCurse=1b,
+	Variant=#rand(0,3),
+    HandItems=[(id=yakurum:water_katana,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+    ArmorItems=[(id=yakurum:water_boots,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+    CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true));
+	
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(LWCurse=1b,
+	Variant=#rand(0,3),
+    HandItems=[(id=yakurum:big_water_blade,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckySwordEnchantments))],
+    ArmorItems=[(id=yakurum:water_boots,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+    CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true));	
+	
+	group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(LWCurse=1b,
+    HandItems=[(id=yakurum:water_axe,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyAxeEnchantments))],
+    ArmorItems=[(id=yakurum:water_boots,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+    CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true));
+
+	group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(LWCurse=1b,
+    HandItems=[(id=yakurum:water_scythe,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyAxeEnchantments))],
+    ArmorItems=[(id=yakurum:water_boots,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+    CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true));
+	
+	group(type=difficulty,ID=hard;type=entity,ID=yakurum:water_master,NBTTag=(LWCurse=1b,
+    HandItems=[(id=yakurum:water_battleaxe,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyAxeEnchantments))],
+    ArmorItems=[(id=yakurum:water_boots,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyBootsEnchantments)),(id=yakurum:water_leggings,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyLeggingsEnchantments)),(id=yakurum:water_chestplate,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyChestplateEnchantments)),(id=yakurum:water_helmet,NBTTag=(LWCurse=1b),Count=1,tag=(Enchantments=#luckyHelmetEnchantments))],
+    HandDropChances=[0.5f,0f],ArmorDropChances=[0.3f,0.3f,0.3f,0.3f],
+    CustomName=#jsonStr(text="Water Master",color=blue,bold=true),CustomNameVisible=true))	
+	)@luck=-2
+@end
+
+@match
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Sword",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_sword,Count=1,tag=(Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Water Lucky Sword",color=blue,bold=true)))))@luck=2
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Scythe",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_scythe,Count=1,tag=(Enchantments=#luckyAxeEnchantments,display=(Name=#jsonStr(text="Water Lucky Scythe",color=blue,bold=true)))))@luck=2
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Battleaxe",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_battleaxe,Count=1,tag=(Enchantments=#luckyAxeEnchantments,display=(Name=#jsonStr(text="Water Lucky Battleaxe",color=blue,bold=true)))))@luck=3
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Needle",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_needle,Count=1,tag=(Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Water Lucky Needle",color=blue,bold=true)))))@luck=2
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Dagger",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_dagger,Count=1,tag=(Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Water Lucky Dagger",color=blue,bold=true)))))@luck=2
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Shuriken",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_shuriken,Count=1,tag=(Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Water Lucky Shuriken",color=blue,bold=true)))))@luck=2
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Katana",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_katana,Count=1,tag=(Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Water Lucky Katana",color=blue,bold=true)))))@luck=2
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Big Water Lucky Blade",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:big_water_blade,Count=1,tag=(Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Big Water Lucky Blade",color=blue,bold=true)))))@luck=2
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Sword",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_sword,Count=1,tag=(LWLeg=1b,Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Water Lucky Sword",color=blue,bold=true))))),delay=2.2)@luck=2
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Scythe",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_scythe,Count=1,tag=(LWLeg=1b,Enchantments=#luckyAxeEnchantments,display=(Name=#jsonStr(text="Water Lucky Scythe",color=blue,bold=true))))),delay=2.2)@luck=2
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Battleaxe",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_battleaxe,Count=1,tag=(LWLeg=1b,Enchantments=#luckyAxeEnchantments,display=(Name=#jsonStr(text="Water Lucky Battleaxe",color=blue,bold=true))))),delay=2.2)@luck=3
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Needle",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_needle,Count=1,tag=(LWLeg=1b,Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Water Lucky Needle",color=blue,bold=true))))),delay=2.2)@luck=2
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Dagger",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_dagger,Count=1,tag=(LWLeg=1b,Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Water Lucky Dagger",color=blue,bold=true))))),delay=2.2)@luck=2
+
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Shuriken",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_shuriken,Count=1,tag=(LWLeg=1b,Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Water Lucky Shuriken",color=blue,bold=true))))),delay=2.2)@luck=2
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Katana",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_katana,Count=1,tag=(LWLeg=1b,Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Water Lucky Katana",color=blue,bold=true))))),delay=2.2)@luck=2
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Big Water Lucky Blade",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:big_water_blade,Count=1,tag=(LWLeg=1b,Enchantments=#luckySwordEnchantments,display=(Name=#jsonStr(text="Big Water Lucky Blade",color=blue,bold=true))))),delay=2.2)@luck=2
+@end
+
+@match
+group(type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Triple LongBow",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_triple_longbow,Count=1,tag=(Enchantments=#luckyBowEnchantments,display=(Name=#jsonStr(text="Water Lucky Triple LongBow",color=blue,bold=true)))));ID=yakurum:aquatic_arrow,amount=3)@luck=3
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Gun",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_gun,Count=1,tag=(Enchantments=#luckyBowEnchantments,display=(Name=#jsonStr(text="Water Lucky Gun",color=blue,bold=true)))))@luck=2
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;group(type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Triple LongBow",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_triple_longbow,Count=1,tag=(LWLeg=1b,Enchantments=#luckyBowEnchantments,display=(Name=#jsonStr(text="Water Lucky Triple LongBow",color=blue,bold=true)))));ID=yakurum:aquatic_arrow,NBTTag=(LWLeg=1b),amount=3),delay=2.2)@luck=3
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Water Lucky Gun",color=blue,bold=true),CustomNameVisible=true,Item=(id=yakurum:water_gun,Count=1,tag=(LWLeg=1b,Enchantments=#luckyBowEnchantments,display=(Name=#jsonStr(text="Water Lucky Gun",color=blue,bold=true))))),delay=2.2)@luck=2
+@end
+
+@match
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Poseidon Himation",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true,Item=(id=yakurum:poseidon_himation,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=thorns,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Himation",color=gold,bold=true)))))@chance=0.1@luck=2
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Poseidon Peplo",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true,Item=(id=yakurum:poseidon_peplo,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=swift_sneak,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Peplo",color=gold,bold=true)))))@chance=0.1@luck=2
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Poseidon Crown",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true,Item=(id=yakurum:poseidon_crown,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=aqua_affinity,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Crown",color=gold,bold=true)))))@chance=0.1@luck=2
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Poseidon Boots",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true,Item=(id=yakurum:poseidon_boots,Count=1,tag=(Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=depth_strider,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Boots",color=gold,bold=true)))))@chance=0.1@luck=2
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Poseidon Himation",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true,Item=(id=yakurum:poseidon_himation,Count=1,tag=(LWLeg=1b,Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=thorns,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Himation",color=gold,bold=true))))),delay=2.2)@chance=0.1@luck=2
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Poseidon Peplo",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true,Item=(id=yakurum:poseidon_peplo,Count=1,tag=(LWLeg=1b,Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=swift_sneak,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Peplo",color=gold,bold=true))))),delay=2.2)@chance=0.1@luck=2
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Poseidon Crown",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true,Item=(id=yakurum:poseidon_crown,Count=1,tag=(LWLeg=1b,Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=aqua_affinity,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Crown",color=gold,bold=true))))),delay=2.2)@chance=0.1@luck=2
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Poseidon Boots",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true,Item=(id=yakurum:poseidon_boots,Count=1,tag=(LWLeg=1b,Enchantments=[(id=protection,lvl=5),(id=fire_protection,lvl=5),(id=blast_protection,lvl=5),(id=projectile_protection,lvl=5),(id=depth_strider,lvl=5),(id=unbreaking,lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Boots",color=gold,bold=true))))),delay=2.2)@chance=0.1@luck=2
+@end
+
+@match
+type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Poseidon Trident",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true,Item=(id=yakurum:poseidon_trident,Count=1,tag=(Enchantments=[(id=sharpness, lvl=5),(id=smite, lvl=5),(id=bane_of_arthropods, lvl=5),(id=knockback, lvl=5),(id=looting, lvl=5),(id=sweeping, lvl=5),(id=unbreaking, lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Trident",color=gold,bold=true,strikethrough=true,underline=true)))))@chance=0.1@luck=2
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=item,NBTTag=(CustomName=#jsonStr(text="Poseidon Trident",color=gold,bold=true,strikethrough=true,underline=true),CustomNameVisible=true,Item=(id=yakurum:poseidon_trident,Count=1,tag=(LWLeg=1b,Enchantments=[(id=sharpness, lvl=5),(id=smite, lvl=5),(id=bane_of_arthropods, lvl=5),(id=knockback, lvl=5),(id=looting, lvl=5),(id=sweeping, lvl=5),(id=unbreaking, lvl=5),(id=mending,lvl=1)],display=(Name=#jsonStr(text="Poseidon Trident",color=gold,bold=true,strikethrough=true,underline=true))))),delay=2.2)@chance=0.1@luck=2
+@end
+
+@match
+group(
+/ sword, difficulty, time, potion effects
+ID=yakurum:sea_shell_sword;
+type=difficulty,ID=hard;
+type=time,ID=18750;
+type=effect,ID=slowness,duration=30,amplifier=4;
+type=effect,ID=blindness,duration=30;
+group:1:(
+/ zombies, creepers, spiders & cave spiders, silverfish & endermites, guardians
+type=entity,ID=yakurum:frozen_zombie,amount=#rand(20,50);
+type=entity,ID=yakurum:icy_creeper,amount=#rand(10,30);
+group(type=entity,ID=yakurum:flying_guardian,amount=#rand(15,25);type=entity,ID=yakurum:biped_guardian,amount=#rand(5,10));
+type=entity,ID=yakurum:triton,amount=#rand(7,12),NBTTag=(Variant=#rand(0,7));
+type=entity,ID=yakurum:mini_guardian,amount=#rand(10,20);
+type=entity,ID=yakurum:damp,amount=#rand(8,15);
+type=entity,ID=yakurum:sunken_skeleton,amount=#rand(7,12),NBTTag=(Variant=#rand(0,2));
+type=entity,ID=shulker,amount=#rand(10,20);
+type=entity,ID=illusioner,amount=#rand(10,15);
+type=entity,ID=yakurum:cecaelia,amount=#rand(6,12);
+type=entity,ID=yakurum:water_spider,amount=#rand(8,15);
+type=entity,ID=yakurum:drowned_villager,amount=#rand(7,12);
+/ all at once
+group(
+type=entity,ID=yakurum:skeleton_guardian,amount=#rand(5,10);
+type=entity,ID=yakurum:zombie_guardian,amount=#rand(5,10);
+type=entity,ID=yakurum:wither_skeleton_guardian,amount=#rand(5,10);
+type=entity,ID=yakurum:frozen_guardian,amount=#rand(5,10);
+type=entity,ID=yakurum:ender_guardian,amount=#rand(5,10);
+type=entity,ID=yakurum:mini_guardian,amount=#rand(5,10);
+type=entity,ID=yakurum:flying_guardian,amount=#rand(5,10);
+type=entity,ID=yakurum:creeper_guardian,amount=#rand(5,10);
+type=entity,ID=yakurum:quick_guardian,amount=#rand(5,10);
+type=entity,ID=yakurum:infernal_guardian,amount=#rand(5,10));
+/ all at once
+group(
+type=entity,ID=yakurum:frozen_zombie,amount=#rand(15,30);
+type=entity,ID=yakurum:icy_creeper,amount=#rand(10,25);
+type=entity,ID=yakurum:sunken_skeleton,amount=#rand(7,10),NBTTag=(Variant=#rand(0,2));
+type=entity,ID=yakurum:triton,amount=#rand(5,10),NBTTag=(Variant=#rand(0,7));
+type=entity,ID=yakurum:flying_guardian,amount=#rand(10,15);
+type=entity,ID=yakurum:mini_guardian,amount=#rand(8,10);
+type=entity,ID=yakurum:damp,amount=#rand(5,10)
+)),posOffset=#circleOffset(8,10)
+)@luck=-1
+@replace
+	group(
+    / sword, difficulty, time, potion effects
+    ID=yakurum:sea_shell_sword;
+    type=difficulty,ID=hard;
+    type=effect,ID=slowness,duration=30,amplifier=4;
+    type=effect,ID=blindness,duration=30;
+    group:1:(
+        / zombies, creepers, spiders & cave spiders, silverfish & endermites, guardians
+        type=entity,ID=yakurum:frozen_zombie,amount=#rand(20,50);
+        type=entity,ID=yakurum:icy_creeper,amount=#rand(10,30);
+        group(type=entity,ID=yakurum:flying_guardian,amount=#rand(15,25);type=entity,ID=yakurum:biped_guardian,amount=#rand(5,10));
+        type=entity,ID=yakurum:triton,amount=#rand(7,12),NBTTag=(Variant=#rand(0,7));
+        type=entity,ID=yakurum:mini_guardian,amount=#rand(10,20);
+        type=entity,ID=yakurum:damp,amount=#rand(8,15);
+        type=entity,ID=yakurum:sunken_skeleton,amount=#rand(7,12),NBTTag=(Variant=#rand(0,2));
+        type=entity,ID=shulker,amount=#rand(10,20);
+        type=entity,ID=illusioner,amount=#rand(10,15);
+		type=entity,ID=yakurum:cecaelia,amount=#rand(6,12);
+		type=entity,ID=yakurum:water_spider,amount=#rand(8,15);
+		type=entity,ID=yakurum:drowned_villager,amount=#rand(7,12);
+
+        / all at once
+        group(
+            type=entity,ID=yakurum:skeleton_guardian,amount=#rand(5,10);
+            type=entity,ID=yakurum:zombie_guardian,amount=#rand(5,10);
+			type=entity,ID=yakurum:wither_skeleton_guardian,amount=#rand(5,10);
+			type=entity,ID=yakurum:frozen_guardian,amount=#rand(5,10);
+            type=entity,ID=yakurum:ender_guardian,amount=#rand(5,10);
+			type=entity,ID=yakurum:mini_guardian,amount=#rand(5,10);
+			type=entity,ID=yakurum:flying_guardian,amount=#rand(5,10);
+			type=entity,ID=yakurum:creeper_guardian,amount=#rand(5,10);
+			type=entity,ID=yakurum:quick_guardian,amount=#rand(5,10);
+            type=entity,ID=yakurum:infernal_guardian,amount=#rand(5,10));
+			
+        / all at once
+        group(
+            type=entity,ID=yakurum:frozen_zombie,amount=#rand(15,30);
+            type=entity,ID=yakurum:icy_creeper,amount=#rand(10,25);
+			type=entity,ID=yakurum:sunken_skeleton,amount=#rand(7,10),NBTTag=(Variant=#rand(0,2));
+			type=entity,ID=yakurum:triton,amount=#rand(5,10),NBTTag=(Variant=#rand(0,7));
+            type=entity,ID=yakurum:flying_guardian,amount=#rand(10,15);
+			type=entity,ID=yakurum:mini_guardian,amount=#rand(8,10);
+            type=entity,ID=yakurum:damp,amount=#rand(5,10)
+			)),posOffset=#circleOffset(8,10)
+		)@luck=-1
+@end
+
+@match
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:wither_guardian)@chance=0.1@luck=-2
+@replace
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:wither_guardian,NBTTag=(LWCurse=1b))@chance=0.1@luck=-2
+@end
+
+@match
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:kraken)@chance=0.1@luck=-2
+@replace
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:kraken,NBTTag=(LWCurse=1b))@chance=0.1@luck=-2
+@end
+
+@match
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:ancient_guardian)@chance=0.1@luck=-2
+@replace
+group(type=difficulty,ID=hard;type=entity,ID=yakurum:ancient_guardian,NBTTag=(LWCurse=1b))@chance=0.1@luck=-2
+@end
+
+@match
+group(type=difficulty,ID=hard;type=entity,ID=warden)@chance=0.5@luck=-2
+@replace
+group(type=difficulty,ID=hard;type=entity,ID=warden,NBTTag=(LWCurse=1b))@chance=0.5@luck=-2
+@end
+
+@match
+type=entity,ID=villager,NBTTag=(
+VillagerData=(level=5,profession=yakurum:sea_treasurer,type=snow),
+Offers=(Recipes=[
+(buy=(id=diamond,Count=#rand(58,64)),sell=(id=yakurum:water_scythe,Count=1,tag=(Enchantments=#luckyAxeEnchantments,display=(Name=#jsonStr(text="Water Lucky Scythe",color=blue,bold=true)))),maxUses=1),
+(buy=(id=diamond,Count=#rand(50,64)),sell=(id=yakurum:water_bow,Count=1,tag=(Enchantments=#luckyBowEnchantments,display=(Name=#jsonStr(text="Water Lucky Bow",color=blue,bold=true)))),maxUses=1),
+(buy=(id=diamond,Count=#rand(53,64)),sell=(id=yakurum:water_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments,display=(Name=#jsonStr(text="Water Lucky Helmet",color=blue,bold=true)))),maxUses=1),
+(buy=(id=emerald_block,Count=#rand(3,4)),sell=(id=lucky:water_lucky_potion,Count=#rand(5,8),tag=(Luck=100)),maxUses=1),
+(buy=(id=diamond,Count=#rand(15,20)),sell=(id=yakurum:yakurum_potion,Count=1,tag=(CustomPotionColor=12318719,CustomPotionEffects=[(Id=#randList(jump_boost,yakurum:climb),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(regeneration,yakurum:resurrection),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(saturation,slow_falling),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=strength,Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:archery,speed),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(haste,resistance),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:repair,health_boost),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:thorns,absorption),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(water_breathing,fire_resistance,yakurum:immovable),Duration=#rand(5000,12000)),(Id=#randList(luck,dolphins_grace),Duration=#rand(5000,12000)),(Id=#randList(invisibility,yakurum:step_up),Duration=#rand(5000,12000)),(Id=#randList(instant_health,yakurum:cure),Duration=1)],
+display=(Name=#jsonStr(text="Holy Water Potion",color=dark_blue,bold=true)))),maxUses=1),
+(buy=(id=diamond,Count=#rand(12,18)),sell=(id=yakurum:yakurum_splash_potion,Count=1,tag=(CustomPotionColor=16388,CustomPotionEffects=[(Id=#randList(slowness,weakness),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(wither,levitation),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:klutz,unluck),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(blindness,poison,hunger),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:corrosion,mining_fatigue),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:perplexity,yakurum:drown),Duration=#rand(5000,12000)),(Id=#randList(yakurum:spin,nausea),Duration=#rand(5000,12000)),(Id=yakurum:teleport,Amplifier=#rand(0,3),Duration=1),(Id=#randList(yakurum:disorganization,instant_damage),Amplifier=#rand(0,3),Duration=1),(Id=#randList(yakurum:combustion,darkness),Amplifier=#rand(0,3),Duration=#rand(3000,10000)),(Id=yakurum:weight,Amplifier=#rand(0,3),Duration=1600),(Id=#randList(yakurum:explosion,yakurum:launch),Duration=30),(Id=yakurum:death,Duration=1200)],
+display=(Name=#jsonStr(text="Pollution Potion",color=dark_green,bold=true)))),maxUses=1)
+]),
+CustomName=#jsonStr(text="Water Lucky Villager",color=blue,bold=true),CustomNameVisible=true
+)@luck=1
+@replace
+group(type=sound,ID=block.note_block.pling,volume=1.0,delay=0.0;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.0;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.4;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.4;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.4;type=sound,ID=block.note_block.pling,volume=1.0,delay=0.8;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=0.8;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=0.8;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.2;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.2;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.2;type=sound,ID=block.note_block.pling,volume=1.0,delay=1.6;type=particle,ID=happy_villager,size=(0.4,0.6,0.4),amount=12,delay=1.6;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=8,delay=1.6;type=particle,ID=happy_villager,size=(0.5,0.8,0.5),amount=60,delay=1.8;type=sound,ID=ui.toast.challenge_complete,volume=1.0,delay=2.0;type=particle,ID=flame,size=(0.4,0.6,0.4),amount=40,delay=2.0;type=entity,ID=villager,NBTTag=(LWLeg=1b,
+    VillagerData=(level=5,profession=yakurum:sea_treasurer,type=snow),
+    Offers=(Recipes=[
+        (buy=(id=diamond,Count=#rand(58,64)),sell=(id=yakurum:water_scythe,Count=1,tag=(Enchantments=#luckyAxeEnchantments,display=(Name=#jsonStr(text="Water Lucky Scythe",color=blue,bold=true)))),maxUses=1),
+        (buy=(id=diamond,Count=#rand(50,64)),sell=(id=yakurum:water_bow,Count=1,tag=(Enchantments=#luckyBowEnchantments,display=(Name=#jsonStr(text="Water Lucky Bow",color=blue,bold=true)))),maxUses=1),
+		(buy=(id=diamond,Count=#rand(53,64)),sell=(id=yakurum:water_helmet,Count=1,tag=(Enchantments=#luckyHelmetEnchantments,display=(Name=#jsonStr(text="Water Lucky Helmet",color=blue,bold=true)))),maxUses=1),
+		(buy=(id=emerald_block,Count=#rand(3,4)),sell=(id=lucky:water_lucky_potion,Count=#rand(5,8),tag=(Luck=100)),maxUses=1),
+        (buy=(id=diamond,Count=#rand(15,20)),sell=(id=yakurum:yakurum_potion,Count=1,tag=(CustomPotionColor=12318719,CustomPotionEffects=[(Id=#randList(jump_boost,yakurum:climb),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(regeneration,yakurum:resurrection),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(saturation,slow_falling),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=strength,Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:archery,speed),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(haste,resistance),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:repair,health_boost),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:thorns,absorption),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(water_breathing,fire_resistance,yakurum:immovable),Duration=#rand(5000,12000)),(Id=#randList(luck,dolphins_grace),Duration=#rand(5000,12000)),(Id=#randList(invisibility,yakurum:step_up),Duration=#rand(5000,12000)),(Id=#randList(instant_health,yakurum:cure),Duration=1)],
+		display=(Name=#jsonStr(text="Holy Water Potion",color=dark_blue,bold=true)))),maxUses=1),
+        (buy=(id=diamond,Count=#rand(12,18)),sell=(id=yakurum:yakurum_splash_potion,Count=1,tag=(CustomPotionColor=16388,CustomPotionEffects=[(Id=#randList(slowness,weakness),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(wither,levitation),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:klutz,unluck),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(blindness,poison,hunger),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:corrosion,mining_fatigue),Amplifier=#rand(0,3),Duration=#rand(5000,12000)),(Id=#randList(yakurum:perplexity,yakurum:drown),Duration=#rand(5000,12000)),(Id=#randList(yakurum:spin,nausea),Duration=#rand(5000,12000)),(Id=yakurum:teleport,Amplifier=#rand(0,3),Duration=1),(Id=#randList(yakurum:disorganization,instant_damage),Amplifier=#rand(0,3),Duration=1),(Id=#randList(yakurum:combustion,darkness),Amplifier=#rand(0,3),Duration=#rand(3000,10000)),(Id=yakurum:weight,Amplifier=#rand(0,3),Duration=1600),(Id=#randList(yakurum:explosion,yakurum:launch),Duration=30),(Id=yakurum:death,Duration=1200)],
+		display=(Name=#jsonStr(text="Pollution Potion",color=dark_green,bold=true)))),maxUses=1)
+    ]),
+    CustomName=#jsonStr(text="Water Lucky Villager",color=blue,bold=true),CustomNameVisible=true
+),delay=2.2)@luck=1
+@end
+
+@file luck_crafting.txt
+
+@match
+yakurum:coral_gem_block=60
+@replace
+yakurum:coral_crystal_block=60
+@end
+
+@match
+golden_carrot=30
+golden_apple=40
+enchanted_golden_apple=100
+@replace
+/ golden_carrot=30   (disabled - too farmable / too powerful)
+/ golden_apple=40    (disabled - too farmable / too powerful)
+enchanted_golden_apple=50
+@end
+
+@file potion_drops.txt
+
+@match
+group(
+type=effect,ID=yakurum:teleport,range=4,amplifier=2,duration=5;
+type=particle,ID=splashpotion,potion="yakurum:teleport";
+type=entity,ID=enderman,posOffset=#circleOffset(0.0,2.0),amount=8
+/ resurrection
+group(
+type=effect,ID=yakurum:resurrection,range=4,amplifier=0,duration=180;
+type=particle,ID=splashpotion,potion="yakurum:resurrection";
+type=entity,ID=allay,posOffset=#circleOffset(0.0,2.0),amount=8
+)@luck=2
+@replace
+group(
+    type=effect,ID=yakurum:teleport,range=4,amplifier=2,duration=5;
+    type=particle,ID=splashpotion,potion="yakurum:teleport";
+    type=entity,ID=enderman,posOffset=#circleOffset(0.0,2.0),amount=8
+)@luck=2
+
+/ resurrection
+group(
+    type=effect,ID=yakurum:resurrection,range=4,amplifier=0,duration=180;
+    type=particle,ID=splashpotion,potion="yakurum:resurrection";
+    type=entity,ID=allay,posOffset=#circleOffset(0.0,2.0),amount=8
+)@luck=2
+@end
+
+@match
+group(
+type=entity,ID=potion,NBTTag=(
+Item=(id=splash_potion,tag=(Potion=#randList(
+night_vision,leaping,fire_resistance,swiftness,
+water_breathing,healing,regeneration,strength,"yakurum:repair"
+"yakurum:flight","yakurum:immovable","yakurum:climb","yakurum:archery"
+)),Count=1),
+Motion=#motionFromDirection(#rand(0,360),-70,0.4)
+),amount=10
+)@luck=2
+@replace
+group(
+    type=entity,ID=potion,NBTTag=(
+        Item=(id=splash_potion,tag=(Potion=#randList(
+            night_vision,leaping,fire_resistance,swiftness,
+            water_breathing,healing,regeneration,strength,"yakurum:repair",
+			"yakurum:flight","yakurum:immovable","yakurum:climb","yakurum:archery"
+        )),Count=1),
+        Motion=#motionFromDirection(#rand(0,360),-70,0.4)
+    ),amount=10
+)@luck=2
+@end
+
