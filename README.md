@@ -19,3 +19,8 @@ Lucky Tools, Lucky XP and Optional Suffering.
 Issues and pull requests are welcome — balance suggestions, bug reports, new drops. Keep everything
 in English, and never edit a third-party addon's files: add or change a patch in
 `overrides/config/luckytweaks/drop_patches/` instead.
+
+## Branches
+
+`main` tracks the **next** release: it can be ahead of what is published on CurseForge, and may
+need mod versions that are not released yet. For a playable pack, download it from CurseForge.
