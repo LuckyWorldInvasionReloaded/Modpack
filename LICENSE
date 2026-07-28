@@ -1,0 +1,27 @@
+Copyright (c) 2026 Laink. All rights reserved, except as granted below.
+
+This covers the pack's own work: configs, KubeJS scripts, the Patchouli book, the
+lucky block addons written for it, and the addon patch files. It does NOT cover the
+third-party mods listed in manifest.json, nor the lines of community addons quoted
+as anchors in overrides/config/luckytweaks/drop_patches/ -- those belong to their
+respective authors, and the addons themselves are downloaded from their official
+CurseForge files rather than shipped here.
+
+You may:
+
+  - read, study, and build this modpack;
+  - play it, on your own game or on a server;
+  - redistribute the official releases -- mirror them -- as long as they are
+    unmodified and credited;
+  - fork this repository on GitHub and modify your fork for the purpose of
+    proposing those changes back here, through issues and pull requests.
+
+You may not, without written permission from the copyright holder:
+
+  - distribute a modified version of this modpack;
+  - publish a fork as a separate modpack.
+
+Contributions offered through pull requests are licensed to the copyright holder
+for use in this project under these same terms.
+
+Provided "as is", without warranty of any kind, express or implied.

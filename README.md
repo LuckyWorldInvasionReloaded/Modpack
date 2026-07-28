@@ -24,3 +24,9 @@ in English, and never edit a third-party addon's files: add or change a patch in
 
 `main` tracks the **next** release: it can be ahead of what is published on CurseForge, and may
 need mod versions that are not released yet. For a playable pack, download it from CurseForge.
+
+## License
+
+Official releases are free to redistribute unmodified, with credit. Modified versions and forks
+published as separate modpacks need permission. Third-party mods and addons keep their own licences.
+See [LICENSE](LICENSE).
