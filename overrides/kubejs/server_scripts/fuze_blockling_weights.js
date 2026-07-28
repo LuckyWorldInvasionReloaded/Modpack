@@ -68,9 +68,9 @@ const BOTTOM_OUTCOMES = [12, 14];             // tier -3 (Totem curse)
 // Reaching any of these as the FINAL outcome (boost OR natural roll) plays the legendary fanfare and
 // bumps the unified "legendary" counter. Both are already tier +3 in OUTCOME_TIERS -> boost-consistent.
 const LEGENDARY_OUTCOMES = [2, 21];
-// Reveal DIFFÉRÉ : pour un légendaire on supprime la pose immédiate du loot Fuze (playerLuck=0) et on pose
-// l'item NOUS-MÊMES à la fin du drumroll -> l'objet n'apparaît plus AVANT la fin de sa propre fanfare.
-const LEGENDARY_REVEAL_TICKS = 44; // ~2.2 s, juste après le toast (40 t) -- aligné sur le delay=2.2 des LB natifs
+// DELAYED reveal: on a legendary we suppress Fuze's immediate drop (playerLuck=0) and drop the item
+// ourselves at the end of the drumroll, so it can no longer appear before its own fanfare ends.
+const LEGENDARY_REVEAL_TICKS = 44; // ~2.2 s, just after the toast (40 t) -- matches the delay=2.2 of native LBs
 
 // Backpack modules, split into their two tier groups (user 2026-06-25). A "module" outcome drops
 // exactly ONE from its group. Advanced trio = +3; crafting/anvil = +2. (stack tier 4 = x16 per slot,
@@ -180,17 +180,17 @@ function playLegendaryFanfare(server, bx, by, bz) {
   });
 }
 
-// L'item EXACT de chaque légendaire Fuze (item VIERGE, aucun NBT -- confirmé au bytecode 2026-06-27).
+// The EXACT item of each Fuze legendary (plain item, no NBT -- confirmed in the bytecode).
 function legendaryDropId(outcome) {
   if (outcome === 2) return "fuze_relics:grapplin_hook";
   if (outcome === 21) return "fuze_relics:jetpack_playbutton_chestplate";
   return null;
 }
 
-// Pose l'item légendaire À LA FIN du drumroll (le blockling n'a rien posé : playerLuck=0). Reveal SILENCIEUX
-// (comme le yummy, qui révèle son item sans son) : le son Fuze d'origine est de toute façon skippé par
-// playerLuck=0. popItemFromFace ne dépend que de la position -> marche post-cassage (cf. patron des modules).
-// id/block/server capturés PAR PARAMÈTRE (scope frais), pas par closure sur des variables réassignées.
+// Drops the legendary item at the END of the drumroll (the blockling dropped nothing: playerLuck=0).
+// Silent reveal, like the Yummy one: Fuze's own sound is skipped by playerLuck=0 anyway.
+// popItemFromFace only needs the position, so it still works after the block is gone.
+// id/block/server are passed as PARAMETERS (fresh scope), not closed over reassigned variables.
 function scheduleLegendaryReveal(server, block, outcome) {
   let id;
   id = legendaryDropId(outcome);
@@ -292,9 +292,9 @@ BlockEvents.broken((event) => {
       vars.playerLuck = 0;
       block.popItemFromFace(Item.of(pickFrom(MODULES_T2)), "up");
     } else if (isLegendaryOutcome(outcome)) {
-      // LÉGENDAIRE : NE PAS laisser Fuze poser le loot tout de suite (l'objet précèderait la fin de la
-      // fanfare = effet "bug"). playerLuck=0 -> le blockling ne pose RIEN ; on révèle l'item à la fin du
-      // drumroll (2.2 s), comme le delay=2.2 des Lucky Blocks natifs. La fanfare+compteur restent immédiats.
+      // LEGENDARY: do not let Fuze drop the loot right away, or the item would land before its own
+      // fanfare ends and look like a bug. playerLuck=0 -> the blockling drops nothing; we reveal the
+      // item after the drumroll (2.2 s). The fanfare and the counter stay immediate.
       vars.playerLuck = 0;
       scheduleLegendaryReveal(event.server, block, outcome);
     } else {
