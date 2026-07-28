@@ -6,8 +6,12 @@ build/
 *.mrpack
 *.log
 
-# Player-preference files: NEVER ship in overrides or the launcher overwrites them on every update.
-# (options.txt = vanilla settings; config/luckystats_hud.json = personal HUD layout, the mod regenerates defaults if absent.)
+# Player-preference files: not shipped, so the launcher does not overwrite them on every update.
+# options.txt = vanilla settings.
+# config/luckystats_hud.json = personal HUD layout. Only ship it (git add -f) when a structural HUD
+# change would otherwise break existing layouts -- see the release checklist in the guide. It is
+# force-added right now because the mod's stats default to disabled, so a fresh install without it
+# gets an empty HUD.
 # Pack BALANCE configs (drops/rarity/caps, oculus shaders-off) stay tracked.
 overrides/options.txt
 overrides/config/luckystats_hud.json
