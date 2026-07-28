@@ -15,11 +15,11 @@ The five mods written for this pack live in their own repositories:
 
 | Mod | Repository | What it does |
 |---|---|---|
-| Lucky Tweaks | [LuckyTweaks](https://github.com/Laink/LuckyTweaks) | Fixes and balance tools for the Lucky Block mod |
-| Lucky Stats | [LuckyStats](https://github.com/Laink/LuckyStats) | Per-player luck statistics and HUD |
-| Lucky Tools | [LuckyTools](https://github.com/Laink/LuckyTools) | The Lucky Tools, ring and belt |
-| Lucky XP | [LuckyXP](https://github.com/Laink/LuckyXP) | The Lucky XP economy and vending machines |
-| Optional Suffering | [OptionalSuffering](https://github.com/Laink/OptionalSuffering) | End a PureSuffering invasion by fighting it |
+| Lucky Tweaks | [LuckyTweaks](https://github.com/LuckyWorldInvasionReloaded/LuckyTweaks) | Fixes and balance tools for the Lucky Block mod |
+| Lucky Stats | [LuckyStats](https://github.com/LuckyWorldInvasionReloaded/LuckyStats) | Per-player luck statistics and HUD |
+| Lucky Tools | [LuckyTools](https://github.com/LuckyWorldInvasionReloaded/LuckyTools) | The Lucky Tools, ring and belt |
+| Lucky XP | [LuckyXP](https://github.com/LuckyWorldInvasionReloaded/LuckyXP) | The Lucky XP economy and vending machines |
+| Optional Suffering | [OptionalSuffering](https://github.com/LuckyWorldInvasionReloaded/OptionalSuffering) | End a PureSuffering invasion by fighting it |
 
 ## Contributing
 
