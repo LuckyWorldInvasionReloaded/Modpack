@@ -11,8 +11,15 @@ The community lucky block addons are **not** in this repository: they belong to 
 downloaded from CurseForge at first launch. See [ADDON_PATCHES.md](ADDON_PATCHES.md) for how the pack
 changes them without touching their files.
 
-The five mods written for this pack live in their own repositories: Lucky Tweaks, Lucky Stats,
-Lucky Tools, Lucky XP and Optional Suffering.
+The five mods written for this pack live in their own repositories:
+
+| Mod | Repository | What it does |
+|---|---|---|
+| Lucky Tweaks | [LuckyTweaks](https://github.com/Laink/LuckyTweaks) | Fixes and balance tools for the Lucky Block mod |
+| Lucky Stats | [LuckyStats](https://github.com/Laink/LuckyStats) | Per-player luck statistics and HUD |
+| Lucky Tools | [LuckyTools](https://github.com/Laink/LuckyTools) | The Lucky Tools, ring and belt |
+| Lucky XP | [LuckyXP](https://github.com/Laink/LuckyXP) | The Lucky XP economy and vending machines |
+| Optional Suffering | [OptionalSuffering](https://github.com/Laink/OptionalSuffering) | End a PureSuffering invasion by fighting it |
 
 ## Contributing
 
