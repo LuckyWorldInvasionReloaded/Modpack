@@ -1,15 +1,15 @@
 # Lucky World Invasion Reloaded 1.3.2
 
 ## Fixes
-- **Fixed a freeze that made a world unplayable.** After 50 minutes to a few hours the server stopped responding: you could walk and place blocks, but nothing was registered, nothing dropped and mobs stood still — and restarting did not help. Cause: some Pink lucky block drops spawn towers of mobs riding each other, and Enhanced AI's aiming divides by a distance that is zero when two mobs share a spot.
-- Two players shopping at the same vending machine: only the first buyer got the goods, while the second player's screen still offered the article and played the whole purchase feedback for a sale that never happened. No levels were ever lost.
-- Three drops that had never worked now do — one Elemental item bundle and a piece of armour from Elemental and Energy lucky blocks. They failed to load silently.
+- Fixed a freeze that made a world unplayable after a while and came back on every restart.
+- Two players buying from the same vending machine: the second one got the purchase feedback without the item. No levels were ever lost.
+- Three drops that had never worked now do (Elemental and Energy lucky blocks).
 
 ## Changes
-- **Dying costs your Lucky XP.** A death takes all of it, being knocked down in multiplayer takes half, and none of it can be picked back up.
-- **The community lucky block addons are no longer shipped with the pack.** They are downloaded from their authors' official CurseForge files the first time you launch, and verified. Nothing changes in game — the same blocks, the same drops. If you play offline on a brand-new install, launch once while connected.
-- Removed Chinese translation files inherited from the original modpack: they were never used here.
+- Dying costs your Lucky XP: all of it on a death, half when you go down in co-op. None of it is recoverable.
+- The community lucky blocks are no longer bundled with the pack: they are downloaded from their authors on first launch. Nothing changes in game, just be online the first time you start a fresh install.
+- Removed unused Chinese translation files.
 
 ## Mods
-- Lucky Tweaks 1.1.1 → 1.1.2
-- Lucky XP 1.0.1 → 1.0.2
+- Lucky Tweaks 1.1.1 to 1.1.2
+- Lucky XP 1.0.1 to 1.0.2
