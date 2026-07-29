@@ -1,4 +1,4 @@
-# Lucky Tweaks 1.1.4
+# Lucky Tweaks 1.1.2
 
 Two community bug reports, and the groundwork that lets the pack stop shipping other people's addons.
 

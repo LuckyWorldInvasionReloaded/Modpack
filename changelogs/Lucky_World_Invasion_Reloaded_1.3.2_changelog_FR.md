@@ -11,5 +11,5 @@
 - Suppression des fichiers de traduction chinoise héritée du modpack d'origine : ils n'ont jamais servi ici.
 
 ## Mods
-- Lucky Tweaks 1.1.1 → 1.1.4
+- Lucky Tweaks 1.1.1 → 1.1.2
 - Lucky XP 1.0.1 → 1.0.2
