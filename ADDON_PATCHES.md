@@ -1,25 +1,15 @@
 # Lucky block addons
 
-The community lucky block addons this pack uses belong to their authors. **The pack does not
-redistribute them.** They are downloaded from the authors' own CurseForge files the first time the
-game starts, and their files are never modified.
-
-## How it works
-
-`config/luckytweaks/addon_downloads.txt` lists each addon with its official URL, size and sha256:
-
-```
-<zip name> | <sha256> | <size> | <url>
-```
-
-Lucky Tweaks fetches any missing one into `addons/lucky/`, checks it against the hash, and the Lucky
-Block mod loads it as a zip. A failed download is not fatal: the game boots without that addon and
-the log says how to install it by hand.
+The community lucky block addons this pack uses belong to their authors. The pack ships their
+**official CurseForge files, byte for byte**, and never edits them — our changes are applied in
+memory as the addon loads. `ADDON_SOURCES.txt` lists every zip with its sha256 so anyone can check
+that. The zips are not in this repository: they go into the CurseForge and Modrinth builds only,
+which is what their licences allow.
 
 ## How the pack modifies them
 
-Not by editing their files. Each addon has a patch file in `config/luckytweaks/drop_patches/`, and
-Lucky Tweaks applies it **in memory** while the addon loads:
+Each addon has a patch file in `config/luckytweaks/drop_patches/`, and Lucky Tweaks applies it **in
+memory** while the addon loads:
 
 ```
 @addon Lucky Block Pink 8.4 [Everlasting Expansions]
@@ -35,8 +25,8 @@ The match is the author's text verbatim, so if an addon is updated and that text
 is skipped and the log says `[droppatch] NOT applied` — a change is never lost silently. Every launch
 logs `[droppatch] <addon>/<file>: N/N patches applied`.
 
-Only the four addons written for this pack (Chaos, Tools, Yummy, LWI) are shipped in `overrides/`,
-since they are ours to begin with.
+The four addons written for this pack (Chaos, Tools, Yummy, LWI) are shipped as plain folders, since
+they are ours to begin with.
 
 ## What the patches change
 
@@ -48,6 +38,6 @@ since they are ours to begin with.
 
 ## Adding or updating an addon
 
-Add a line to `addon_downloads.txt` with the official file's URL, size and sha256, then write its
-patch file against that zip. To update one, change the entry, delete the old zip from
-`addons/lucky/`, and re-anchor whatever the log reports as `NOT applied`.
+Put the author's official zip in `addons/lucky/`, add its name, sha256, size and URL to
+`ADDON_SOURCES.txt`, then write its patch file against that zip. To update one, replace the zip,
+update the entry, and re-anchor whatever the log reports as `NOT applied`.

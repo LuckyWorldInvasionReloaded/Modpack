@@ -2,6 +2,8 @@ shaderpacks/
 mods/
 build/
 .gradle/
+# *.zip also covers overrides/addons/lucky/: the community addons are shipped in the CurseForge and
+# Modrinth builds only, which is what their licences allow. See ADDON_SOURCES.txt.
 *.zip
 *.mrpack
 *.log

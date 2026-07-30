@@ -7,7 +7,7 @@
 
 ## Changements
 - Mourir coûte son Lucky XP : tout à la mort, la moitié à terre en coopération. Rien n'est récupérable.
-- Les lucky blocks de la communauté ne sont plus livrés avec le pack : ils sont téléchargés depuis leurs auteurs au premier lancement. Rien ne change en jeu, soyez juste connecté au premier démarrage d'une installation neuve.
+- Les addons lucky block de la communauté sont livrés exactement tels que leurs auteurs les ont publiés, les réglages du pack étant appliqués au chargement. Rien ne change en jeu.
 - Suppression de fichiers de traduction chinoise inutilisés.
 
 ## Mods

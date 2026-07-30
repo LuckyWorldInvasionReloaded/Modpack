@@ -7,7 +7,7 @@
 
 ## Changes
 - Dying costs your Lucky XP: all of it on a death, half when you go down in co-op. None of it is recoverable.
-- The community lucky blocks are no longer bundled with the pack: they are downloaded from their authors on first launch. Nothing changes in game, just be online the first time you start a fresh install.
+- Community lucky block addons now ship exactly as their authors published them, and the pack's own tweaks are applied while the game loads. Nothing changes in game.
 - Removed unused Chinese translation files.
 
 ## Mods
