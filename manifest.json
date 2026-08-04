@@ -11,7 +11,7 @@
     "manifestType":  "minecraftModpack",
     "manifestVersion":  1,
     "name":  "Lucky World Invasion Reloaded",
-    "version":  "1.3.2",
+    "version":  "1.3.3",
     "author":  "",
     "files":  [
                   {
@@ -631,7 +631,7 @@
                   },
                   {
                       "projectID":  1573232,
-                      "fileID":  8539019,
+                      "fileID":  8578714,
                       "required":  true
                   },
                   {
@@ -651,7 +651,7 @@
                   },
                   {
                       "projectID":  1615933,
-                      "fileID":  8537026,
+                      "fileID":  8578726,
                       "required":  true
                   }
               ],
