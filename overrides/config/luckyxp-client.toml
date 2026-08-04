@@ -1,25 +1,21 @@
 
-#Lucky XP HUD layout, in GUI pixels. Forge reloads this file live when you save it (re-enter the world if an edit does not show right away).
+#Lucky XP HUD layout, in GUI pixels.
+#Forge caches these values and only re-reads them when its file watcher sees the write, which
+#many editors dodge by saving to a temp file and renaming. Leaving and re-entering the world does
+#NOT re-read a client config either: restart the game to be sure an edit applied.
 [hud]
-	#Vanilla XP bar height above the bottom of the screen (vanilla default = 29).
+	#Blue Lucky XP bar height above the bottom of the screen. Must clear the vanilla level number,
+	#which vanilla draws at 35.
 	#Range: 0 ~ 256
-	vanillaXpBarY = 29
-	#Blue Lucky XP bar height above the bottom of the screen.
-	#Range: 0 ~ 256
-	luckyXpBarY = 38
-	#Horizontal gap between a level number's right edge and the bar's left edge (bigger = number further left).
-	#Range: -300 ~ 300
-	numberGapX = 2
-	#Vertical nudge of the GREEN vanilla XP level number relative to its bar (negative = up).
+	luckyXpBarY = 42
+	#Vertical nudge of the BLUE level number relative to its bar (negative = up). It is centered
+	#horizontally, like vanilla's own number.
 	#Range: -200 ~ 200
-	vanillaNumberDy = -2
-	#Vertical nudge of the BLUE Lucky XP level number relative to its bar (negative = up).
-	#Range: -200 ~ 200
-	luckyNumberDy = -2
-	#Cluster lift when the blue Lucky XP bar is shown (room opened for the blue bar).
+	luckyNumberDy = -6
+	#Cluster lift when the blue Lucky XP bar is shown (room opened for the blue bar and its number).
 	#Range: 0 ~ 100
-	reserve = 11
-	#Cluster lift when the Lucky XP bar is hidden (small gap kept above the vanilla XP bar).
+	reserve = 13
+	#Cluster lift when the Lucky XP bar is hidden -- creative and spectator, where vanilla
+	#hides its own XP bar too.
 	#Range: 0 ~ 100
 	gap = 2
-
