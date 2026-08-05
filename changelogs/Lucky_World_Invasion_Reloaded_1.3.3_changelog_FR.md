@@ -2,7 +2,6 @@
 
 ## Corrections
 - Les blocs d'un Lucky Event revenaient sans fin quand on les cassait autrement qu'à la main : marteau, piston, explosion. Le bloc réapparaissait quatre fois par seconde pendant qu'on gardait ce qu'on avait ramassé, ce qui dupliquait les objets à l'infini.
-- La barre d'XP refonctionne avec les mods qui l'animent : ses animations ne marchaient plus depuis que Lucky XP remplaçait la barre vanilla.
 
 ## Changements
 - Les drops légendaires et maudits sont annoncés dans le tchat, avec le lucky block d'où ils viennent. L'annonce du légendaire arrive avec le roulement de tambour, pour que tout le monde attende la révélation ensemble ; celle d'un maudit patiente quelques secondes pour ne pas la vendre à l'avance.
